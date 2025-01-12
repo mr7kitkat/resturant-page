@@ -1,7 +1,7 @@
 {
   "name": "resturant-page",
   "version": "1.0.0",
-  "description": "This is a project from The Odin Project",
+  "description": "This is a part of the odin project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/mr7kitkat/resturant-page.git"
   },
-  "author": "Priyanshu (mr7kitkat)",
+  "author": "mr7kitkat",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mr7kitkat/resturant-page/issues"
@@ -24,8 +24,5 @@
     "webpack": "^5.97.1",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.0"
-  },
-  "dependencies": {
-    "sass": "^1.83.1"
   }
 }

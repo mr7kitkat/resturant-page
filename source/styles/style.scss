@@ -1,0 +1,141 @@
+@use "reset";
+
+$playFair: "Playfair Display", serif;
+$dmSans: "DM Sans", serif;
+$gray100: #dbdfd0;
+$gray200: #dbdfd0;
+$gray300: #474747;
+$white: #ffffff;
+$white100: #f9f9f7;
+$red100: #ad343e;
+$black100: #2c2f24;
+$black200: #414536;
+$defaultSize: 16px;
+
+@mixin flex($d: row, $justify: center, $align: center) {
+  display: flex;
+  flex-direction: $d;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+body {
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: normal;
+  font-family: $dmSans;
+  font-size: $defaultSize;
+  color: $black200;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  color: $black200;
+  border: 2px solid $black200;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+}
+
+// header styling
+
+header {
+  #contact-links {
+    background-color: #474747;
+    @include flex($justify: space-between);
+    padding: 0.3rem 2rem;
+    $size: 12px;
+
+    .links {
+      @include flex();
+      gap: 1rem;
+
+      div {
+        @include flex();
+        gap: 0.5rem;
+      }
+
+      img {
+        height: auto;
+        width: 100%;
+        max-width: $size;
+        filter: contrast(10%) grayscale(100%);
+      }
+
+      a,
+      span {
+        font-size: 10px;
+        color: $white;
+        text-decoration: none;
+      }
+
+      &.social {
+        img {
+          &:hover {
+            filter: none;
+          }
+        }
+      }
+    }
+  }
+
+  #navigation {
+    @include flex($justify: space-between);
+    padding: 0.5rem 1rem;
+    background-color: $gray100;
+
+    a,
+    span {
+      color: $black100;
+    }
+
+    #logo {
+      height: 50px;
+      @include flex();
+      gap: 0.5rem;
+
+      img {
+        height: 100%;
+        width: auto;
+      }
+
+      span {
+        font-size: 2.2rem;
+        font-family: $playFair;
+        font-style: italic;
+        font-weight: 600;
+      }
+    }
+
+    nav {
+      @include flex();
+      gap: 2rem;
+    }
+  }
+}
+
+main {
+  #hero {
+    height: 100vh;
+    width: 100%;
+    background: url("../assets/herobg3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    @include flex($d: column);
+    gap: 1rem;
+
+    h1 {
+      color: $white100;
+      font-size: 4rem;
+    }
+
+    p {
+      font-size: 2rem;
+      color: $white;
+    }
+  }
+}

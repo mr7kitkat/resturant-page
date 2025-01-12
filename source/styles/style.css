@@ -1,0 +1,187 @@
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+body {
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: normal;
+  font-family: "DM Sans", serif;
+  font-size: 16px;
+  color: #414536;
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  color: #414536;
+  border: 2px solid #414536;
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+}
+
+header #contact-links {
+  background-color: #474747;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 2rem;
+}
+header #contact-links .links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+header #contact-links .links div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+header #contact-links .links img {
+  height: auto;
+  width: 100%;
+  max-width: 12px;
+  filter: contrast(10%) grayscale(100%);
+}
+header #contact-links .links a,
+header #contact-links .links span {
+  font-size: 10px;
+  color: #ffffff;
+  text-decoration: none;
+}
+header #contact-links .links.social img:hover {
+  filter: none;
+}
+header #navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #dbdfd0;
+}
+header #navigation a,
+header #navigation span {
+  color: #2c2f24;
+}
+header #navigation #logo {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+header #navigation #logo img {
+  height: 100%;
+  width: auto;
+}
+header #navigation #logo span {
+  font-size: 2.2rem;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 600;
+}
+header #navigation nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+main #hero {
+  height: 100vh;
+  width: 100%;
+  background: url("../assets/herobg3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+main #hero h1 {
+  color: #f9f9f7;
+  font-size: 4rem;
+}
+main #hero p {
+  font-size: 2rem;
+  color: #ffffff;
+}/*# sourceMappingURL=style.css.map */

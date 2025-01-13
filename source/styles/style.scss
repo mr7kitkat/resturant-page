@@ -11,6 +11,12 @@ $red100: #ad343e;
 $black100: #2c2f24;
 $black200: #414536;
 $defaultSize: 16px;
+$cream: #fdfbd4;
+
+.containor {
+  height: 100%;
+  width: 100%;
+}
 
 @mixin flex($d: row, $justify: center, $align: center) {
   display: flex;
@@ -19,7 +25,14 @@ $defaultSize: 16px;
   align-items: $align;
 }
 
+@mixin grid($cols: 1fr, $rows: 1fr) {
+  display: grid;
+  grid-template-columns: $cols;
+  grid-template-rows: $rows;
+}
+
 body {
+  @extend .containor;
   font-optical-sizing: auto;
   font-style: normal;
   font-weight: normal;
@@ -84,7 +97,7 @@ header {
   #navigation {
     @include flex($justify: space-between);
     padding: 0.5rem 1rem;
-    background-color: $gray100;
+    background-color: $cream;
 
     a,
     span {
@@ -112,30 +125,248 @@ header {
     nav {
       @include flex();
       gap: 2rem;
+
+      a {
+        padding: 0.25rem 0.7rem;
+        border-radius: 1.2rem;
+      }
+
+      a:hover {
+        background-color: $gray300;
+        color: $cream;
+      }
     }
   }
 }
 
 main {
-  #hero {
+  @extend .containor;
+  @include flex($d: column);
+
+  & > section {
+    @extend .containor;
     height: 100vh;
-    width: 100%;
-    background: url("../assets/herobg3.jpg");
+    padding: 1rem 2rem;
+
+    h2 {
+      font-size: 2.5rem;
+      font-family: $playFair;
+      max-inline-size: 20ch;
+    }
+
+    &:nth-child(even) {
+      background-color: $cream;
+    }
+  }
+
+  #hero {
+    background: url("../assets/herobg2.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-clip: border-box;
-    @include flex($d: column);
-    gap: 1rem;
+    padding: 0;
 
-    h1 {
-      color: $white100;
-      font-size: 4rem;
+    #content {
+      @extend .containor;
+      @include flex($d: column);
+      gap: 8px;
+      background-color: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(2px);
+
+      h1 {
+        color: $white100;
+        font-size: 4rem;
+      }
+
+      p {
+        font-size: 2rem;
+        color: $white;
+        max-inline-size: 66ch;
+        max-width: 720px;
+        text-align: center;
+      }
+
+      #action-btns {
+        @include flex();
+        gap: 1rem;
+
+        .btn {
+          border-color: $white;
+          background-color: $white;
+
+          &.book {
+            border-color: $red100;
+            background-color: $red100;
+            color: $white;
+            transition: 0.4s all ease;
+
+            &:hover {
+              filter: brightness(120%);
+              transform: scale(1.05);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #offered-services {
+    @include flex($d: column);
+
+    #heading {
+      @extend .containor;
+      @include flex($justify: space-between);
+
+      .cards {
+        @include flex($justify: space-around);
+        gap: 1.25rem;
+
+        .card {
+          background-color: $gray300;
+          padding: 1rem;
+          @include flex($d: column);
+          border-radius: 1rem;
+
+          img {
+            height: 80px;
+          }
+
+          span {
+            font-size: 1rem;
+            color: $white100;
+          }
+        }
+      }
     }
 
-    p {
-      font-size: 2rem;
-      color: $white;
+    #event-services {
+      @extend .containor;
+      @include grid($cols: repeat(auto-fit, minmax(200px, 1fr)), $rows: 420px);
+      gap: 2rem;
+
+      .service {
+        @extend .containor;
+        @include grid($rows: 4fr 1fr);
+        gap: 1rem;
+
+        img {
+          @extend .containor;
+          object-fit: cover;
+          border-radius: 1rem;
+        }
+      }
+    }
+  }
+
+  #venue {
+    h2 {
+      max-inline-size: 100%;
+    }
+
+    .sub-containor {
+      margin-top: 1rem;
+      @include grid($cols: repeat(2, 1fr));
+      gap: 1rem;
+
+      .apps {
+        @include flex($d: column);
+        gap: 1rem;
+
+        .app {
+          display: inline-block;
+          background-color: $white;
+          border-radius: 1rem;
+          height: 100px;
+          width: 300px;
+          padding: 0rem 1rem;
+          overflow: hidden;
+
+          img {
+            height: 100%;
+            width: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $black100;
+  height: 60vh;
+  @include grid($cols: 1fr 3fr 1fr);
+  padding: 1rem;
+  align-items: end;
+  color: $cream;
+
+  h2 {
+    font-size: 1.5rem;
+    font-family: $dmSans;
+  }
+
+  #contact {
+    #highlight {
+      background-color: $cream;
+      color: $black100;
+      font-weight: bold;
+    }
+
+    div {
+      @include flex($justify: start);
+      gap: 0.7rem;
+
+      img {
+        @extend .containor;
+        height: 1.25rem;
+        width: auto;
+        background-color: $cream;
+        border-radius: 50%;
+        padding: 0.1rem;
+      }
+
+      a {
+        color: $cream;
+      }
+    }
+  }
+
+  #getEmail {
+    @include flex($d: column);
+    gap: 0.6rem;
+
+    img {
+      height: 200px;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      max-inline-size: 32ch;
+      text-align: center;
+    }
+
+    #form {
+      background-color: $cream;
+      @extend .containor;
+      max-width: 400px;
+      padding: 0.1rem 1rem;
+      padding-left: 0.1rem;
+      @include flex($justify: space-between);
+      gap: 1rem;
+
+      [type="email"] {
+        all: unset;
+        width: 100%;
+        padding: 0.1rem 0.5rem;
+        height: 30px;
+        background-color: $black100;
+      }
+
+      [type="submit"] {
+        all: unset;
+        color: $black100;
+        font-weight: bold;
+      }
     }
   }
 }

@@ -68,6 +68,11 @@ h6 {
   isolation: isolate;
 }
 
+.containor, footer #getEmail #form, footer #contact div img, main #offered-services #event-services .service img, main #offered-services #event-services .service, main #offered-services #event-services, main #offered-services #heading, main #hero #content, main > section, main, body {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   font-optical-sizing: auto;
   font-style: normal;
@@ -131,7 +136,7 @@ header #navigation {
   justify-content: space-between;
   align-items: center;
   padding: 0.5rem 1rem;
-  background-color: #dbdfd0;
+  background-color: #fdfbd4;
 }
 header #navigation a,
 header #navigation span {
@@ -162,26 +167,235 @@ header #navigation nav {
   align-items: center;
   gap: 2rem;
 }
+header #navigation nav a {
+  padding: 0.25rem 0.7rem;
+  border-radius: 1.2rem;
+}
+header #navigation nav a:hover {
+  background-color: #474747;
+  color: #fdfbd4;
+}
 
-main #hero {
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main > section {
   height: 100vh;
-  width: 100%;
-  background: url("../assets/herobg3.jpg");
+  padding: 1rem 2rem;
+}
+main > section h2 {
+  font-size: 2.5rem;
+  font-family: "Playfair Display", serif;
+  max-inline-size: 20ch;
+}
+main > section:nth-child(even) {
+  background-color: #fdfbd4;
+}
+main #hero {
+  background: url("../assets/herobg2.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-clip: border-box;
+  padding: 0;
+}
+main #hero #content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+}
+main #hero #content h1 {
+  color: #f9f9f7;
+  font-size: 4rem;
+}
+main #hero #content p {
+  font-size: 2rem;
+  color: #ffffff;
+  max-inline-size: 66ch;
+  max-width: 720px;
+  text-align: center;
+}
+main #hero #content #action-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+main #hero #content #action-btns .btn {
+  border-color: #ffffff;
+  background-color: #ffffff;
+}
+main #hero #content #action-btns .btn.book {
+  border-color: #ad343e;
+  background-color: #ad343e;
+  color: #ffffff;
+  transition: 0.4s all ease;
+}
+main #hero #content #action-btns .btn.book:hover {
+  filter: brightness(120%);
+  transform: scale(1.05);
+}
+main #offered-services {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+main #offered-services #heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+main #offered-services #heading .cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1.25rem;
+}
+main #offered-services #heading .cards .card {
+  background-color: #474747;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}
+main #offered-services #heading .cards .card img {
+  height: 80px;
+}
+main #offered-services #heading .cards .card span {
+  font-size: 1rem;
+  color: #f9f9f7;
+}
+main #offered-services #event-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: 420px;
+  gap: 2rem;
+}
+main #offered-services #event-services .service {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 4fr 1fr;
+  gap: 1rem;
+}
+main #offered-services #event-services .service img {
+  object-fit: cover;
+  border-radius: 1rem;
+}
+main #venue h2 {
+  max-inline-size: 100%;
+}
+main #venue .sub-containor {
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  gap: 1rem;
+}
+main #venue .sub-containor .apps {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
-main #hero h1 {
-  color: #f9f9f7;
-  font-size: 4rem;
+main #venue .sub-containor .apps .app {
+  display: inline-block;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  height: 100px;
+  width: 300px;
+  padding: 0rem 1rem;
+  overflow: hidden;
 }
-main #hero p {
-  font-size: 2rem;
-  color: #ffffff;
+main #venue .sub-containor .apps .app img {
+  height: 100%;
+  width: auto;
+}
+
+footer {
+  background-color: #2c2f24;
+  height: 60vh;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 1fr;
+  padding: 1rem;
+  align-items: end;
+  color: #fdfbd4;
+}
+footer h2 {
+  font-size: 1.5rem;
+  font-family: "DM Sans", serif;
+}
+footer #contact #highlight {
+  background-color: #fdfbd4;
+  color: #2c2f24;
+  font-weight: bold;
+}
+footer #contact div {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 0.7rem;
+}
+footer #contact div img {
+  height: 1.25rem;
+  width: auto;
+  background-color: #fdfbd4;
+  border-radius: 50%;
+  padding: 0.1rem;
+}
+footer #contact div a {
+  color: #fdfbd4;
+}
+footer #getEmail {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+}
+footer #getEmail img {
+  height: 200px;
+}
+footer #getEmail h3 {
+  font-size: 1.5rem;
+  max-inline-size: 32ch;
+  text-align: center;
+}
+footer #getEmail #form {
+  background-color: #fdfbd4;
+  max-width: 400px;
+  padding: 0.1rem 1rem;
+  padding-left: 0.1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+footer #getEmail #form [type=email] {
+  all: unset;
+  width: 100%;
+  padding: 0.1rem 0.5rem;
+  height: 30px;
+  background-color: #2c2f24;
+}
+footer #getEmail #form [type=submit] {
+  all: unset;
+  color: #2c2f24;
+  font-weight: bold;
 }/*# sourceMappingURL=style.css.map */

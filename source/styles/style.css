@@ -171,10 +171,13 @@ header #navigation-menu #logo-contatinor .title {
   align-items: center;
   gap: 0;
   color: #f5f5f5;
-  font-family: "Cedarville Cursive", serif;
+  font-family: "Permanent Marker", serif;
 }
 header #navigation-menu #logo-contatinor .title span:first-child {
   text-transform: uppercase;
+}
+header #navigation-menu #navigation {
+  z-index: 1;
 }
 header #navigation-menu #navigation #side-menu {
   display: none;
@@ -195,6 +198,95 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
   color: #333333;
 }
 
+main > section {
+  height: 100vh;
+  width: 100%;
+}
+main #hero {
+  background-image: url("../assets/background/herobg2.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+main #hero #content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  backdrop-filter: blur(2px);
+}
+main #hero #content h1 {
+  color: #fbc02d;
+  font-family: "Permanent Marker", serif;
+  font-size: 6rem;
+  text-shadow: 1px 1px 2px #f5f5f5, -1px -1px #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  line-height: 0.7;
+  position: relative;
+  top: -30px;
+  left: 70px;
+}
+main #hero #content h1 span:first-child {
+  margin-left: -200px;
+}
+main #hero #content p {
+  position: relative;
+  top: -10px;
+  left: 0px;
+  font-size: 1rem;
+  font-style: italic;
+  font-family: "DM Sans", serif;
+  background-color: #f5f5f5;
+  text-align: center;
+}
+main #hero #content p #tasty {
+  font-family: "Permanent Marker", serif;
+  color: #d32f2f;
+}
+main #hero #content p #healthy {
+  font-family: "Permanent Marker", serif;
+  color: #6b8e23;
+}
+main #hero #content #btns {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0;
+}
+main #hero #content #btns button {
+  background-color: #f5f5f5;
+  color: #333333;
+  outline: none;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 2.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: transform 0.4s ease;
+}
+main #hero #content #btns button:hover {
+  transform: scale(1.15);
+}
+main #hero #content #btns span {
+  font-family: "Permanent Marker", serif;
+  color: #f5f5f5;
+  font-size: 1.3rem;
+  text-shadow: 1px 1px #333333;
+}
+main #hero #content #btns #book-table {
+  background-color: #fbc02d;
+}
+
 @media screen and (max-width: 768px) {
   header #contact-navigation {
     display: none;
@@ -212,6 +304,7 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
     display: inline-block;
     width: 200px;
     text-align: center;
+    font-size: 1.5rem;
   }
   header #navigation-menu #navigation #theHam .hamb-line {
     background-color: #f5f5f5;

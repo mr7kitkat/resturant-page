@@ -153,6 +153,18 @@ main {
   & > section {
     height: 100vh;
     width: 100%;
+    padding: 1rem 2rem;
+
+    &:nth-child(odd) {
+      background-color: $charcoal;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-style: italic;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+    }
   }
 
   #hero {
@@ -160,6 +172,7 @@ main {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    padding: 0;
 
     #content {
       height: 100%;
@@ -196,11 +209,13 @@ main {
         #tasty {
           font-family: $cursive;
           color: $red;
+          font-weight: normal;
         }
 
         #healthy {
           font-family: $cursive;
           color: $green;
+          font-weight: normal;
         }
       }
 
@@ -235,6 +250,97 @@ main {
         #book-table {
           background-color: $yellow;
         }
+      }
+    }
+  }
+
+  #our-services {
+    padding-left: 0;
+    padding-right: 0;
+
+    #timing {
+      width: 100%;
+      @include flex($justify: space-around);
+      background-color: $yellow;
+      padding: 1rem;
+      .card {
+        $dimension: 100px;
+        height: $dimension;
+        width: $dimension;
+        @include flex($direction: column, $gap: 4px);
+        background-color: $charcoal;
+        border-radius: 1rem;
+
+        img {
+          background-color: $yellow;
+          max-width: 60px;
+          border-radius: 50%;
+        }
+
+        span {
+          color: $beige;
+          font-size: 0.7rem;
+        }
+      }
+    }
+
+    #services {
+      margin-top: 1rem;
+      padding: 0 2rem;
+
+      @include grid(
+        $cols: repeat(auto-fit, minmax(220px, 1fr)),
+        $rows: 280px,
+        $gap: 2rem
+      );
+
+      .card {
+        @include grid($rows: 100% repeat(2, auto));
+        img {
+          height: 100%;
+          max-width: 100%;
+          object-fit: cover;
+          border-radius: 1rem;
+        }
+
+        .title {
+          margin-top: 0.8rem;
+          text-transform: uppercase;
+          font-style: italic;
+        }
+
+        .slogan {
+          line-height: 1.25;
+          font-size: 0.9rem;
+          text-align: justify;
+        }
+      }
+    }
+  }
+
+  #venue-and-partners {
+    h2 {
+      color: $beige;
+    }
+
+    #content {
+      @include flex($justify: space-between, $gap: 1rem);
+
+      #or {
+        height: 100%;
+
+        span {
+          color: $beige;
+          font-size: 2.5rem;
+          font-style: italic;
+          font-family: $cursive;
+        }
+      }
+
+      #delivery-partners {
+        height: 100%;
+        width: 100%;
+        border: 1px solid $charcoal;
       }
     }
   }

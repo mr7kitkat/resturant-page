@@ -201,12 +201,23 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
 main > section {
   height: 100vh;
   width: 100%;
+  padding: 1rem 2rem;
+}
+main > section:nth-child(odd) {
+  background-color: #333333;
+}
+main > section h2 {
+  font-size: 2rem;
+  font-style: italic;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
 }
 main #hero {
   background-image: url("../assets/background/herobg2.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 0;
 }
 main #hero #content {
   height: 100%;
@@ -249,10 +260,12 @@ main #hero #content p {
 main #hero #content p #tasty {
   font-family: "Permanent Marker", serif;
   color: #d32f2f;
+  font-weight: normal;
 }
 main #hero #content p #healthy {
   font-family: "Permanent Marker", serif;
   color: #6b8e23;
+  font-weight: normal;
 }
 main #hero #content #btns {
   width: 100%;
@@ -285,6 +298,94 @@ main #hero #content #btns span {
 }
 main #hero #content #btns #book-table {
   background-color: #fbc02d;
+}
+main #our-services {
+  padding-left: 0;
+  padding-right: 0;
+}
+main #our-services #timing {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0;
+  background-color: #fbc02d;
+  padding: 1rem;
+}
+main #our-services #timing .card {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  background-color: #333333;
+  border-radius: 1rem;
+}
+main #our-services #timing .card img {
+  background-color: #fbc02d;
+  max-width: 60px;
+  border-radius: 50%;
+}
+main #our-services #timing .card span {
+  color: #f5f5f5;
+  font-size: 0.7rem;
+}
+main #our-services #services {
+  margin-top: 1rem;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-rows: 280px;
+  gap: 2rem;
+}
+main #our-services #services .card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 100% repeat(2, auto);
+  gap: 0;
+}
+main #our-services #services .card img {
+  height: 100%;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+main #our-services #services .card .title {
+  margin-top: 0.8rem;
+  text-transform: uppercase;
+  font-style: italic;
+}
+main #our-services #services .card .slogan {
+  line-height: 1.25;
+  font-size: 0.9rem;
+  text-align: justify;
+}
+main #venue-and-partners h2 {
+  color: #f5f5f5;
+}
+main #venue-and-partners #content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+main #venue-and-partners #content #or {
+  height: 100%;
+}
+main #venue-and-partners #content #or span {
+  color: #f5f5f5;
+  font-size: 2.5rem;
+  font-style: italic;
+  font-family: "Permanent Marker", serif;
+}
+main #venue-and-partners #content #delivery-partners {
+  height: 100%;
+  width: 100%;
+  border: 1px solid #333333;
 }
 
 @media screen and (max-width: 768px) {

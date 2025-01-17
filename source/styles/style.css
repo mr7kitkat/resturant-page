@@ -91,6 +91,20 @@ body img {
   height: auto;
   width: 100%;
 }
+body button {
+  background-color: #f5f5f5;
+  color: #333333;
+  outline: none;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 2.5rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  transition: transform 0.4s ease;
+}
+body button:hover {
+  transform: scale(1.15);
+}
 
 header {
   display: flex;
@@ -207,7 +221,7 @@ main > section:nth-child(odd) {
   background-color: #333333;
 }
 main > section h2 {
-  font-size: 2rem;
+  font-size: 3rem;
   font-style: italic;
   padding-left: 2rem;
   margin-bottom: 1rem;
@@ -275,20 +289,6 @@ main #hero #content #btns {
   justify-content: space-around;
   align-items: center;
   gap: 0;
-}
-main #hero #content #btns button {
-  background-color: #f5f5f5;
-  color: #333333;
-  outline: none;
-  border: none;
-  padding: 0.7rem 1rem;
-  border-radius: 2.5rem;
-  font-size: 1.2rem;
-  font-weight: bold;
-  transition: transform 0.4s ease;
-}
-main #hero #content #btns button:hover {
-  transform: scale(1.15);
 }
 main #hero #content #btns span {
   font-family: "Permanent Marker", serif;
@@ -386,6 +386,162 @@ main #venue-and-partners #content #delivery-partners {
   height: 100%;
   width: 100%;
   border: 1px solid #333333;
+}
+main #venue-and-partners #content #delivery-partners h3 {
+  color: #f5f5f5;
+}
+main #venue-and-partners #content #delivery-partners #options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+main #venue-and-partners #content #delivery-partners #options img {
+  display: inline-block;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+main #event-blogs {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 0;
+}
+main #event-blogs #moreBlogs {
+  background-color: #d32f2f;
+  color: #f5f5f5;
+  align-self: flex-end;
+  margin-bottom: 1rem;
+}
+main #event-blogs #containor {
+  display: grid;
+  grid-template-columns: 6fr 2fr 2fr;
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+main #event-blogs #containor .card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 6fr 2fr;
+  gap: 1rem;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid #333333;
+}
+main #event-blogs #containor .card .content {
+  width: 100%;
+}
+main #event-blogs #containor .card img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+main #event-blogs #containor .card .title {
+  font-size: 1rem;
+}
+main #event-blogs #containor .card .summary {
+  display: none;
+}
+main #event-blogs #containor .main {
+  grid-column: 1/2;
+  grid-row: 1/3;
+}
+main #event-blogs #containor .main .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: left;
+}
+main #event-blogs #containor .main .summary {
+  margin-top: 0.5rem;
+  display: inline-block;
+  font-size: 0.9rem;
+  text-align: justify;
+}
+
+footer {
+  height: auto;
+  width: 100%;
+  background-color: #333333;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  color: #f5f5f5;
+}
+footer #subscribe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+footer #subscribe img {
+  width: 200px;
+}
+footer #subscribe h2 {
+  font-family: "Permanent Marker", serif;
+  color: #fbc02d;
+  font-size: 3rem;
+  text-shadow: 1px 1px #f5f5f5;
+  letter-spacing: 1px;
+}
+footer #subscribe #form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  background-color: #fbc02d;
+  padding: 0.5rem;
+  border-radius: 0.2rem;
+}
+footer #subscribe #form input {
+  height: 50px;
+  padding: 0 1rem;
+  border: 0;
+  outline: 0;
+}
+footer #subscribe #form #email {
+  width: 100%;
+}
+footer #subscribe #form #submit {
+  background-color: transparent;
+  color: #333333;
+  font-weight: bold;
+}
+footer #social-media-links {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0;
+}
+footer #side-bar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+footer #side-bar #availability #time-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  gap: 0;
 }
 
 @media screen and (max-width: 768px) {

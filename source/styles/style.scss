@@ -3,6 +3,7 @@
 $playFair: "Playfair Display", serif;
 $dmSans: "DM Sans", serif;
 $cursive: "Permanent Marker", serif;
+$revolution: "Protest Revolution", serif;
 $defaultSize: 16px;
 
 // Warm Red (#D32F2F) – A deep, vibrant red that evokes warmth, passion, and appetite. It works great for call-to-action buttons or highlighting key menu items.
@@ -33,6 +34,7 @@ body {
   font-size: $defaultSize;
   color: $charcoal;
   background-color: $beige;
+  max-width: 1550px;
 
   a {
     text-decoration: none;
@@ -48,10 +50,11 @@ body {
     color: $charcoal;
     outline: none;
     border: none;
-    padding: 0.7rem 1rem;
+    padding: 0.7rem 1.5rem;
     border-radius: 2.5rem;
     font-size: 1.2rem;
     font-weight: bold;
+    cursor: pointer;
     transition: transform 0.4s ease;
 
     &:hover {
@@ -75,16 +78,18 @@ body {
   gap: $gap;
 }
 
+// THE HEADER PART OF STYLING
 header {
   @include flex($direction: column);
 
   // first line or first child or first section of header
   #contact-navigation {
+    @include flex($justify: space-between);
     width: 100%;
     background-color: $charcoal;
-    @include flex($justify: space-between);
-    padding: 0.2rem 1rem;
+    padding: 0.25rem 1rem;
 
+    // IMAGE
     img {
       width: 12px;
     }
@@ -118,26 +123,24 @@ header {
 
   // second part or child or section of header
   #navigation-menu {
+    @include flex($justify: space-between);
     width: 100%;
     background-color: $charcoal;
-    @include flex($justify: space-between);
-    padding: 0.5rem 1rem;
+    padding: 0.6rem 1rem;
 
     // styling for logo section
     #logo-contatinor {
       @include flex($gap: 1rem);
+
       img {
         width: 64px;
       }
 
       .title {
-        @include flex($direction: column);
         color: $beige;
-        font-family: $cursive;
-
-        span:first-child {
-          text-transform: uppercase;
-        }
+        font-family: $revolution;
+        font-size: 2.6rem;
+        text-transform: uppercase;
       }
     }
 
@@ -153,6 +156,7 @@ header {
         a {
           color: $yellow;
           padding: 0.25rem 1rem;
+          font-size: 1.25rem;
 
           &:hover,
           &.active {
@@ -165,21 +169,25 @@ header {
   }
 }
 
-main {
+// MAIN
+#home {
   & > section {
-    height: 100vh;
+    height: 100%;
     width: 100%;
-    padding: 1rem 2rem;
+    padding: 2rem;
 
     &:nth-child(odd) {
       background-color: $charcoal;
     }
 
     h2 {
-      font-size: 3rem;
+      font-size: 2.6rem;
       font-style: italic;
       padding-left: 2rem;
       margin-bottom: 1rem;
+      font-family: serif;
+      font-weight: bolder;
+      text-decoration: underline;
     }
   }
 
@@ -189,6 +197,7 @@ main {
     background-repeat: no-repeat;
     background-size: cover;
     padding: 0;
+    height: 100vh;
 
     #content {
       height: 100%;
@@ -212,33 +221,10 @@ main {
         }
       }
 
-      p {
-        position: relative;
-        top: -10px;
-        left: 0px;
-        font-size: 1rem;
-        font-style: italic;
-        font-family: $dmSans;
-        background-color: $beige;
-        text-align: center;
-
-        #tasty {
-          font-family: $cursive;
-          color: $red;
-          font-weight: normal;
-        }
-
-        #healthy {
-          font-family: $cursive;
-          color: $green;
-          font-weight: normal;
-        }
-      }
-
       #btns {
+        @include flex($justify: space-around);
         width: 100%;
         max-width: 420px;
-        @include flex($justify: space-around);
 
         span {
           font-family: $cursive;
@@ -257,12 +243,14 @@ main {
   #our-services {
     padding-left: 0;
     padding-right: 0;
+    height: auto;
 
     #timing {
       width: 100%;
       @include flex($justify: space-around);
       background-color: $yellow;
       padding: 1rem;
+
       .card {
         $dimension: 100px;
         height: $dimension;
@@ -285,34 +273,37 @@ main {
     }
 
     #services {
-      margin-top: 1rem;
+      margin-top: 4rem;
       padding: 0 2rem;
 
       @include grid(
         $cols: repeat(auto-fit, minmax(220px, 1fr)),
-        $rows: 280px,
-        $gap: 2rem
+        $rows: 300px,
+        $gap: 3rem
       );
 
+      grid-auto-rows: 300px;
+
       .card {
-        @include grid($rows: 100% repeat(2, auto));
+        position: relative;
+        cursor: pointer;
+
         img {
           height: 100%;
           max-width: 100%;
           object-fit: cover;
-          border-radius: 1rem;
+          border-radius: 1.3rem;
+          object-position: top center;
         }
 
         .title {
-          margin-top: 0.8rem;
           text-transform: uppercase;
-          font-style: italic;
-        }
-
-        .slogan {
-          line-height: 1.25;
-          font-size: 0.9rem;
-          text-align: justify;
+          position: absolute;
+          bottom: 1rem;
+          left: 1rem;
+          color: $beige;
+          text-shadow: 1px 1px $charcoal;
+          background-color: #3333330d;
         }
       }
     }
@@ -324,10 +315,20 @@ main {
     }
 
     #content {
-      @include flex($justify: space-between, $gap: 1rem);
+      @include grid($cols: 1fr auto 1fr, $gap: 1rem);
+      #venue {
+        width: 100%;
+
+        iframe {
+          width: 100%;
+          height: 100%;
+        }
+      }
 
       #or {
         height: 100%;
+        display: flex;
+        align-items: center;
 
         span {
           color: $beige;
@@ -428,6 +429,7 @@ main {
   }
 }
 
+// FOOTER
 footer {
   height: auto;
   width: 100%;
@@ -449,6 +451,7 @@ footer {
       font-size: 3rem;
       text-shadow: 1px 1px $beige;
       letter-spacing: 1px;
+      text-align: center;
     }
 
     #form {
@@ -491,8 +494,70 @@ footer {
   }
 }
 
+// for devices with maximum width of 1024 px
+@media screen and (max-width: 1024px) {
+  #home {
+    & > section {
+      h2 {
+        font-size: 2.25rem;
+      }
+    }
+
+    #venue-and-partners {
+      #content {
+        #delivery-partners {
+          #options {
+            @include flex($direction: column, $gap: 1rem);
+            align-items: center;
+
+            img {
+              height: 80px;
+              padding: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+
+    #event-blogs {
+      #containor {
+        @include grid($cols: 1fr 1fr, $rows: auto auto, $gap: 1rem);
+        padding: 0.5rem 1rem;
+
+        .card {
+          @include grid($cols: auto, $rows: 200px auto, $gap: 1rem);
+
+          &:nth-child(4),
+          &:nth-child(5) {
+            display: none;
+          }
+        }
+
+        .main {
+          .title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: left;
+          }
+
+          .summary {
+            margin-top: 0.5rem;
+            display: inline-block;
+            font-size: 1.1rem;
+            text-align: justify;
+          }
+        }
+      }
+    }
+  }
+}
+
+// styling for devices upto 768px
 @media screen and (max-width: 768px) {
   header {
+    position: sticky;
+    top: 0;
+    z-index: 3;
     #contact-navigation {
       display: none;
     }
@@ -543,23 +608,135 @@ footer {
           }
         }
 
-        #side-menu:checked {
-          ~ #theHam .hamb-line {
-            background-color: transparent;
-            &::before {
-              transform: rotate(-45deg);
-              top: 0;
-            }
-            &::after {
-              transform: rotate(45deg);
-              top: 0;
-            }
+        #theHam.active .hamb-line {
+          background-color: transparent;
+          z-index: 2;
+          &::before {
+            transform: rotate(-45deg);
+            top: 0;
           }
-
-          ~ nav {
-            @include flex($direction: column, $gap: 2rem);
+          &::after {
+            transform: rotate(45deg);
+            top: 0;
           }
         }
+
+        #theHam.active ~ nav {
+          @include flex($direction: column, $gap: 2rem);
+        }
+      }
+    }
+  }
+
+  #home {
+    & > section {
+      padding: 0.5rem 1rem;
+
+      h2 {
+        font-size: 1.8rem;
+        padding-left: 1rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    #hero {
+      #content {
+        h1 {
+          font-size: 4rem;
+        }
+
+        #btns {
+          @include flex($direction: column);
+        }
+      }
+    }
+
+    #our-services {
+      #services {
+        margin-top: 1rem;
+        padding: 0 1rem;
+      }
+    }
+
+    #venue-and-partners {
+      #content {
+        @include grid($cols: 1fr, $rows: 1fr auto 1fr, $gap: 1rem);
+
+        #or {
+          @include flex();
+        }
+
+        #delivery-partners {
+          #options {
+            @include grid(
+              $cols: repeat(auto-fit, minmax(260px, 1fr)),
+              $gap: 1rem
+            );
+
+            img {
+              height: 80px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    @include grid($cols: 1fr, $rows: auto auto, $gap: 1rem);
+    padding: 1rem;
+
+    #subscribe {
+      #form {
+        @include flex($direction: column);
+        input {
+          height: 50px;
+          width: 100%;
+        }
+      }
+    }
+
+    #side-bar {
+      #connect {
+        @include grid($cols: 1fr 2fr, $gap: 1rem);
+      }
+    }
+  }
+}
+
+// and the final for max with of 480px
+@media screen and (max-width: 480px) {
+  #home {
+    & > section {
+      padding: 0.5rem 1rem;
+
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+
+    #hero {
+      #content {
+        h1 {
+          font-size: 2rem;
+        }
+      }
+    }
+
+    #event-blogs {
+      #containor {
+        @include grid($cols: 1fr, $rows: auto, $gap: 1rem);
+        padding: 0.5rem;
+      }
+    }
+  }
+
+  footer {
+    @include grid($cols: 1fr, $rows: auto auto, $gap: 1rem);
+    padding: 1rem;
+    #side-bar {
+      #connect {
+        @include flex($direction: column);
       }
     }
   }

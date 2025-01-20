@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Permanent+Marker&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Protest+Revolution&display=swap"
       rel="stylesheet"
     />
   </head>
@@ -20,37 +20,52 @@
             <a href="tel:+91-8409725709">+91-8409725709</a>
           </section>
           <section id="email">
-            <img src="./assets/contact/email.png" alt="Email" />
+            <img loading="lazy" src="./assets/contact/email.png" alt="Email" />
             <a href="mailto:mr7kitkat@gmail.com">mr7kitkat@gmail.com</a>
           </section>
         </section>
         <section id="social-media-links">
           <a href="#"
-            ><img src="./assets/contact/facebook.png" alt="Facebook Link"
+            ><img
+              loading="lazy"
+              src="./assets/contact/facebook.png"
+              alt="Facebook Link"
           /></a>
           <a href="#"
-            ><img src="./assets/contact/instagram.png" alt="Instagram Link"
+            ><img
+              loading="lazy"
+              src="./assets/contact/instagram.png"
+              alt="Instagram Link"
           /></a>
           <a href="#"
-            ><img src="./assets/contact/twitter.png" alt="Twitter Link"
+            ><img
+              loading="lazy"
+              src="./assets/contact/twitter.png"
+              alt="Twitter Link"
           /></a>
           <a href="#"
-            ><img src="./assets/contact/github.png" alt="Github Link"
+            ><img
+              loading="lazy"
+              src="./assets/contact/github.png"
+              alt="Github Link"
           /></a>
         </section>
       </section>
       <section id="navigation-menu">
         <section id="logo-contatinor">
-          <img src="./assets/logo.png" alt="logo image for nani ka ghar" />
+          <img
+            loading="lazy"
+            src="./assets/logo.png"
+            alt="logo image for nani ka ghar"
+          />
           <span class="title"><span>nani</span> <span>ka ghar</span></span>
         </section>
         <section id="navigation">
-          <input type="checkbox" id="side-menu" />
           <label for="side-menu" id="theHam"
             ><span class="hamb-line"></span
           ></label>
           <nav>
-            <a href="#" class="active">Home</a>
+            <a href="#">Home</a>
             <a href="#">Menu</a>
             <a href="#">Blogs & Events</a>
             <a href="#">Contact</a>
@@ -59,219 +74,227 @@
       </section>
     </header>
     <main>
-      <!-- Hero is the on load first thing to see on the page -->
-      <section id="hero">
-        <section id="content">
-          <h1><span>Eat what</span> <span>you love.</span></h1>
-          <p class="slogan">
-            The best quality of <span id="tasty">Tasty</span> and
-            <span id="healthy">Healthy</span> food for food lovers like you.
-          </p>
-          <section id="btns">
-            <button id="book-table">Book A Table</button>
-            <span>Or</span>
-            <button id="order">Order Now</button>
+      <!-- HOME PAGE -->
+      <section id="home-page">
+        <!-- Hero is the on load first thing to see on the page -->
+        <section id="hero">
+          <section id="content">
+            <h1><span>Eat what</span> <span>you love.</span></h1>
+
+            <section id="btns">
+              <button id="book-table">Book A Table</button>
+              <span>Or</span>
+              <button id="order">Order Now</button>
+            </section>
+          </section>
+        </section>
+
+        <!-- section to showcase our services -->
+        <section id="our-services">
+          <h2>We also offer event services to cater to your needs.</h2>
+          <section id="timing">
+            <section class="card">
+              <img
+                loading="lazy"
+                src="./assets/icons/menu.png"
+                alt="Special menu"
+              />
+              <span>Special Menu</span>
+            </section>
+
+            <section class="card">
+              <img
+                loading="lazy"
+                src="./assets/icons/calender.png"
+                alt="24 by 7 service"
+              />
+              <span>24 * 7 Available!</span>
+            </section>
+            <section class="card">
+              <img
+                src="./assets/icons/delivery-man.png"
+                alt="Free Home Delivery"
+              />
+              <span>Free Delivery*</span>
+            </section>
+          </section>
+          <section id="services">
+            <section class="card">
+              <img
+                loading="lazy"
+                src="./assets/background/birthday.jpg"
+                alt=""
+              />
+              <h3 class="title">Birthdays</h3>
+            </section>
+            <section class="card">
+              <img
+                loading="lazy"
+                src="./assets/background/WEDDING.jpg"
+                alt=""
+              />
+              <h3 class="title">Weddings</h3>
+            </section>
+            <section class="card">
+              <img
+                loading="lazy"
+                src="./assets/background/friendsTogether.jpg"
+                alt=""
+              />
+              <h3 class="title">Friends Together</h3>
+            </section>
+          </section>
+        </section>
+
+        <!-- map and online partners -->
+        <section id="venue-and-partners">
+          <h2>Visit Us OR Order Online!</h2>
+          <section id="content">
+            <section id="venue">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7180.1266220715615!2d85.79278153573648!3d25.867393596530043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1736968831368!5m2!1sen!2sin"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </section>
+            <section id="or"><span>OR</span></section>
+            <section id="delivery-partners">
+              <h3>Order with our delivery partner*</h3>
+              <section id="options">
+                <img
+                  src="./assets/background/Zomato_logo.png"
+                  alt="Zomato_logo"
+                  id="app"
+                />
+                <img
+                  src="./assets/background/Swiggy_logo.png"
+                  alt="Swiggy"
+                  id="app"
+                />
+                <img
+                  src="./assets/background/FoodPanda_logo.png"
+                  alt="Food Panda"
+                  id="app"
+                />
+                <img
+                  src="./assets/background/Uber-Eats-logo.png"
+                  alt="Uber Eats"
+                  id="app"
+                />
+              </section>
+            </section>
+          </section>
+        </section>
+        <!-- Section covering Events & Blog -->
+        <section id="event-blogs">
+          <h2>Blog & Events</h2>
+          <button id="moreBlogs">See More</button>
+          <section id="containor">
+            <section class="card main">
+              <img loading="lazy" src="./assets/background/foods.jpeg" alt="" />
+              <section class="content">
+                <h3 class="title">
+                  The Ultimate Guide to Our Menu: New Additions & Seasonal
+                  Favorites
+                </h3>
+                <p class="summary">
+                  Welcome to our Ultimate Guide to Our Menu! Whether you’re a
+                  regular or a first-time visitor, this guide will give you a
+                  sneak peek into some of the exciting new additions and
+                  seasonal dishes we’re serving up right now. Our culinary team
+                  is always working to bring fresh, creative, and flavorful
+                  options to your table, and we’re thrilled to share what’s new
+                  and in-season this season.
+                </p>
+              </section>
+            </section>
+            <section class="card">
+              <img loading="lazy" src="./assets/background/foods.jpeg" alt="" />
+              <section class="content">
+                <h3 class="title">
+                  Savor the Flavor: A Behind-the-Scenes Look at Our Kitchen
+                </h3>
+                <p class="summary">
+                  At [Restaurant Name], we believe that great dining starts with
+                  passion, precision, and a commitment to quality. That’s why we
+                  want to take you behind the scenes to show you what goes on in
+                  our kitchen, where every dish is carefully crafted with love
+                  and expertise. In this article, we’ll give you an exclusive
+                  look at the hard work, creativity, and attention to detail
+                  that goes into making each meal a memorable experience.
+                </p>
+              </section>
+            </section>
+
+            <section class="card">
+              <img loading="lazy" src="./assets/background/foods.jpeg" alt="" />
+              <section class="content">
+                <h3 class="title">
+                  Savor the Flavor: A Behind-the-Scenes Look at Our Kitchen
+                </h3>
+                <p class="summary">
+                  At [Restaurant Name], we believe that great dining starts with
+                  passion, precision, and a commitment to quality. That’s why we
+                  want to take you behind the scenes to show you what goes on in
+                  our kitchen, where every dish is carefully crafted with love
+                  and expertise. In this article, we’ll give you an exclusive
+                  look at the hard work, creativity, and attention to detail
+                  that goes into making each meal a memorable experience.
+                </p>
+              </section>
+            </section>
+            <section class="card">
+              <img loading="lazy" src="./assets/background/foods.jpeg" alt="" />
+              <section class="content">
+                <h3 class="title">
+                  Savor the Flavor: A Behind-the-Scenes Look at Our Kitchen
+                </h3>
+                <p class="summary">
+                  At [Restaurant Name], we believe that great dining starts with
+                  passion, precision, and a commitment to quality. That’s why we
+                  want to take you behind the scenes to show you what goes on in
+                  our kitchen, where every dish is carefully crafted with love
+                  and expertise. In this article, we’ll give you an exclusive
+                  look at the hard work, creativity, and attention to detail
+                  that goes into making each meal a memorable experience.
+                </p>
+              </section>
+            </section>
+
+            <section class="card">
+              <img loading="lazy" src="./assets/background/foods.jpeg" alt="" />
+              <section class="content">
+                <h3 class="title">
+                  Savor the Flavor: A Behind-the-Scenes Look at Our Kitchen
+                </h3>
+                <p class="summary">
+                  At [Restaurant Name], we believe that great dining starts with
+                  passion, precision, and a commitment to quality. That’s why we
+                  want to take you behind the scenes to show you what goes on in
+                  our kitchen, where every dish is carefully crafted with love
+                  and expertise. In this article, we’ll give you an exclusive
+                  look at the hard work, creativity, and attention to detail
+                  that goes into making each meal a memorable experience.
+                </p>
+              </section>
+            </section>
           </section>
         </section>
       </section>
+      <!-- MENU PAGE -->
+      <section id="menu-page"></section>
 
-      <!-- section to showcase our services -->
-      <section id="our-services">
-        <h2>We also offer event services to cater to your needs.</h2>
-        <section id="timing">
-          <section class="card">
-            <img src="./assets/icons/menu.png" alt="Special menu" />
-            <span>Special Menu</span>
-          </section>
+      <!-- BLOGS AND EVENTS -->
+      <section id="evets-page"></section>
 
-          <section class="card">
-            <img src="./assets/icons/calender.png" alt="24 by 7 service" />
-            <span>24 * 7 Available!</span>
-          </section>
-          <section class="card">
-            <img
-              src="./assets/icons/delivery-man.png"
-              alt="Free Home Delivery"
-            />
-            <span>Free Delivery*</span>
-          </section>
-        </section>
-        <section id="services">
-          <section class="card">
-            <img src="./assets/background/birthday.jpg" alt="" />
-            <h3 class="title">Birthdays</h3>
-            <p class="slogan">
-              Make Your Birthday Unforgettable with Exceptional Service and
-              Delicious Food!
-            </p>
-          </section>
-          <section class="card">
-            <img src="./assets/background/WEDDING.jpg" alt="" />
-            <h3 class="title">Weddings</h3>
-            <p class="slogan">
-              Where Your Love Story Meets Exceptional Cuisine – Perfect
-              Weddings, Perfectly Served!
-            </p>
-          </section>
-          <section class="card">
-            <img src="./assets/background/friendsTogether.jpg" alt="" />
-            <h3 class="title">Friends Together</h3>
-            <p class="slogan">
-              Celebrate Friendship with Great Food and Unforgettable Moments!
-            </p>
-          </section>
-          <section class="card">
-            <img src="./assets/background/catering.jpg" alt="" />
-            <h3 class="title">Events</h3>
-            <p class="slogan">
-              Make Every Event Unforgettable with Exceptional Food and Service!
-            </p>
-          </section>
-        </section>
-      </section>
-
-      <!-- map and online partners -->
-      <section id="venue-and-partners">
-        <h2>Visit Us OR Order Online!</h2>
-        <section id="content">
-          <section id="venue">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d7180.1266220715615!2d85.79278153573648!3d25.867393596530043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1736968831368!5m2!1sen!2sin"
-              width="600"
-              height="450"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-            ></iframe>
-          </section>
-          <section id="or"><span>OR</span></section>
-          <section id="delivery-partners">
-            <h3>Order with our delivery partner*</h3>
-            <section id="options">
-              <img
-                src="./assets/background/Zomato_logo.png"
-                alt="Zomato_logo"
-                id="app"
-              />
-              <img
-                src="./assets/background/Swiggy_logo.png"
-                alt="Swiggy"
-                id="app"
-              />
-              <img
-                src="./assets/background/FoodPanda_logo.png"
-                alt="Food Panda"
-                id="app"
-              />
-              <img
-                src="./assets/background/Uber-Eats-logo.png"
-                alt="Uber Eats"
-                id="app"
-              />
-            </section>
-          </section>
-        </section>
-      </section>
-      <!-- Section covering Events & Blog -->
-      <section id="event-blogs">
-        <h2>Blog & Events</h2>
-        <button id="moreBlogs">See More</button>
-        <section id="containor">
-          <section class="card main">
-            <img src="./assets/background/foods.jpeg" alt="" />
-            <section class="content">
-              <h3 class="title">
-                The Ultimate Guide to Our Menu: New Additions & Seasonal
-                Favorites
-              </h3>
-              <p class="summary">
-                Welcome to our Ultimate Guide to Our Menu! Whether you’re a
-                regular or a first-time visitor, this guide will give you a
-                sneak peek into some of the exciting new additions and seasonal
-                dishes we’re serving up right now. Our culinary team is always
-                working to bring fresh, creative, and flavorful options to your
-                table, and we’re thrilled to share what’s new and in-season this
-                season.
-              </p>
-            </section>
-          </section>
-          <section class="card">
-            <img src="./assets/background/foods.jpeg" alt="" />
-            <section class="content">
-              <h3 class="title">
-                Savor the Flavor: A Behind-the-Scenes Look at Our Kitchen
-              </h3>
-              <p class="summary">
-                At [Restaurant Name], we believe that great dining starts with
-                passion, precision, and a commitment to quality. That’s why we
-                want to take you behind the scenes to show you what goes on in
-                our kitchen, where every dish is carefully crafted with love and
-                expertise. In this article, we’ll give you an exclusive look at
-                the hard work, creativity, and attention to detail that goes
-                into making each meal a memorable experience.
-              </p>
-            </section>
-          </section>
-
-          <section class="card">
-            <img src="./assets/background/foods.jpeg" alt="" />
-            <section class="content">
-              <h3 class="title">
-                Savor the Flavor: A Behind-the-Scenes Look at Our Kitchen
-              </h3>
-              <p class="summary">
-                At [Restaurant Name], we believe that great dining starts with
-                passion, precision, and a commitment to quality. That’s why we
-                want to take you behind the scenes to show you what goes on in
-                our kitchen, where every dish is carefully crafted with love and
-                expertise. In this article, we’ll give you an exclusive look at
-                the hard work, creativity, and attention to detail that goes
-                into making each meal a memorable experience.
-              </p>
-            </section>
-          </section>
-          <section class="card">
-            <img src="./assets/background/foods.jpeg" alt="" />
-            <section class="content">
-              <h3 class="title">
-                Savor the Flavor: A Behind-the-Scenes Look at Our Kitchen
-              </h3>
-              <p class="summary">
-                At [Restaurant Name], we believe that great dining starts with
-                passion, precision, and a commitment to quality. That’s why we
-                want to take you behind the scenes to show you what goes on in
-                our kitchen, where every dish is carefully crafted with love and
-                expertise. In this article, we’ll give you an exclusive look at
-                the hard work, creativity, and attention to detail that goes
-                into making each meal a memorable experience.
-              </p>
-            </section>
-          </section>
-
-          <section class="card">
-            <img src="./assets/background/foods.jpeg" alt="" />
-            <section class="content">
-              <h3 class="title">
-                Savor the Flavor: A Behind-the-Scenes Look at Our Kitchen
-              </h3>
-              <p class="summary">
-                At [Restaurant Name], we believe that great dining starts with
-                passion, precision, and a commitment to quality. That’s why we
-                want to take you behind the scenes to show you what goes on in
-                our kitchen, where every dish is carefully crafted with love and
-                expertise. In this article, we’ll give you an exclusive look at
-                the hard work, creativity, and attention to detail that goes
-                into making each meal a memorable experience.
-              </p>
-            </section>
-          </section>
-        </section>
-      </section>
+      <!-- Contact -->
+      <section id="contact"></section>
     </main>
     <footer>
       <section id="subscribe">
-        <img src="./assets/logo.png" alt="logo" />
+        <img loading="lazy" src="./assets/logo.png" alt="logo" />
         <h2>Nani Ka Ghar</h2>
         <span>
           Join our mailing list for updates, Get news & offers events.</span
@@ -284,16 +307,28 @@
       <section id="side-bar">
         <section id="social-media-links">
           <a href="#"
-            ><img src="./assets/contact/facebook.png" alt="Facebook Link"
+            ><img
+              loading="lazy"
+              src="./assets/contact/facebook.png"
+              alt="Facebook Link"
           /></a>
           <a href="#"
-            ><img src="./assets/contact/instagram.png" alt="Instagram Link"
+            ><img
+              loading="lazy"
+              src="./assets/contact/instagram.png"
+              alt="Instagram Link"
           /></a>
           <a href="#"
-            ><img src="./assets/contact/twitter.png" alt="Twitter Link"
+            ><img
+              loading="lazy"
+              src="./assets/contact/twitter.png"
+              alt="Twitter Link"
           /></a>
           <a href="#"
-            ><img src="./assets/contact/github.png" alt="Github Link"
+            ><img
+              loading="lazy"
+              src="./assets/contact/github.png"
+              alt="Github Link"
           /></a>
         </section>
         <section id="connect">

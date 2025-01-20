@@ -83,6 +83,7 @@ body {
   font-size: 16px;
   color: #333333;
   background-color: #f5f5f5;
+  max-width: 1550px;
 }
 body a {
   text-decoration: none;
@@ -96,10 +97,11 @@ body button {
   color: #333333;
   outline: none;
   border: none;
-  padding: 0.7rem 1rem;
+  padding: 0.7rem 1.5rem;
   border-radius: 2.5rem;
   font-size: 1.2rem;
   font-weight: bold;
+  cursor: pointer;
   transition: transform 0.4s ease;
 }
 body button:hover {
@@ -114,14 +116,14 @@ header {
   gap: 0;
 }
 header #contact-navigation {
-  width: 100%;
-  background-color: #333333;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 0;
-  padding: 0.2rem 1rem;
+  width: 100%;
+  background-color: #333333;
+  padding: 0.25rem 1rem;
 }
 header #contact-navigation img {
   width: 12px;
@@ -159,14 +161,14 @@ header #contact-navigation #social-media-links img {
   filter: grayscale(100%) contrast(10%);
 }
 header #navigation-menu {
-  width: 100%;
-  background-color: #333333;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 0;
-  padding: 0.5rem 1rem;
+  width: 100%;
+  background-color: #333333;
+  padding: 0.6rem 1rem;
 }
 header #navigation-menu #logo-contatinor {
   display: flex;
@@ -179,15 +181,9 @@ header #navigation-menu #logo-contatinor img {
   width: 64px;
 }
 header #navigation-menu #logo-contatinor .title {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
   color: #f5f5f5;
-  font-family: "Permanent Marker", serif;
-}
-header #navigation-menu #logo-contatinor .title span:first-child {
+  font-family: "Protest Revolution", serif;
+  font-size: 2.6rem;
   text-transform: uppercase;
 }
 header #navigation-menu #navigation {
@@ -206,34 +202,39 @@ header #navigation-menu #navigation nav {
 header #navigation-menu #navigation nav a {
   color: #fbc02d;
   padding: 0.25rem 1rem;
+  font-size: 1.25rem;
 }
 header #navigation-menu #navigation nav a:hover, header #navigation-menu #navigation nav a.active {
   background-color: #fbc02d;
   color: #333333;
 }
 
-main > section {
-  height: 100vh;
+#home > section {
+  height: 100%;
   width: 100%;
-  padding: 1rem 2rem;
+  padding: 2rem;
 }
-main > section:nth-child(odd) {
+#home > section:nth-child(odd) {
   background-color: #333333;
 }
-main > section h2 {
-  font-size: 3rem;
+#home > section h2 {
+  font-size: 2.6rem;
   font-style: italic;
   padding-left: 2rem;
   margin-bottom: 1rem;
+  font-family: serif;
+  font-weight: bolder;
+  text-decoration: underline;
 }
-main #hero {
+#home #hero {
   background-image: url("../assets/background/herobg2.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   padding: 0;
+  height: 100vh;
 }
-main #hero #content {
+#home #hero #content {
   height: 100%;
   width: 100%;
   display: flex;
@@ -243,7 +244,7 @@ main #hero #content {
   gap: 1rem;
   backdrop-filter: blur(2px);
 }
-main #hero #content h1 {
+#home #hero #content h1 {
   color: #fbc02d;
   font-family: "Permanent Marker", serif;
   font-size: 6rem;
@@ -258,52 +259,33 @@ main #hero #content h1 {
   top: -30px;
   left: 70px;
 }
-main #hero #content h1 span:first-child {
+#home #hero #content h1 span:first-child {
   margin-left: -200px;
 }
-main #hero #content p {
-  position: relative;
-  top: -10px;
-  left: 0px;
-  font-size: 1rem;
-  font-style: italic;
-  font-family: "DM Sans", serif;
-  background-color: #f5f5f5;
-  text-align: center;
-}
-main #hero #content p #tasty {
-  font-family: "Permanent Marker", serif;
-  color: #d32f2f;
-  font-weight: normal;
-}
-main #hero #content p #healthy {
-  font-family: "Permanent Marker", serif;
-  color: #6b8e23;
-  font-weight: normal;
-}
-main #hero #content #btns {
-  width: 100%;
-  max-width: 420px;
+#home #hero #content #btns {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   gap: 0;
+  width: 100%;
+  max-width: 420px;
 }
-main #hero #content #btns span {
+#home #hero #content #btns span {
   font-family: "Permanent Marker", serif;
   color: #f5f5f5;
   font-size: 1.3rem;
   text-shadow: 1px 1px #333333;
 }
-main #hero #content #btns #book-table {
+#home #hero #content #btns #book-table {
   background-color: #fbc02d;
 }
-main #our-services {
+#home #our-services {
   padding-left: 0;
   padding-right: 0;
+  height: auto;
 }
-main #our-services #timing {
+#home #our-services #timing {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -313,7 +295,7 @@ main #our-services #timing {
   background-color: #fbc02d;
   padding: 1rem;
 }
-main #our-services #timing .card {
+#home #our-services #timing .card {
   height: 100px;
   width: 100px;
   display: flex;
@@ -324,80 +306,87 @@ main #our-services #timing .card {
   background-color: #333333;
   border-radius: 1rem;
 }
-main #our-services #timing .card img {
+#home #our-services #timing .card img {
   background-color: #fbc02d;
   max-width: 60px;
   border-radius: 50%;
 }
-main #our-services #timing .card span {
+#home #our-services #timing .card span {
   color: #f5f5f5;
   font-size: 0.7rem;
 }
-main #our-services #services {
-  margin-top: 1rem;
+#home #our-services #services {
+  margin-top: 4rem;
   padding: 0 2rem;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  grid-template-rows: 280px;
-  gap: 2rem;
+  grid-template-rows: 300px;
+  gap: 3rem;
+  grid-auto-rows: 300px;
 }
-main #our-services #services .card {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 100% repeat(2, auto);
-  gap: 0;
+#home #our-services #services .card {
+  position: relative;
+  cursor: pointer;
 }
-main #our-services #services .card img {
+#home #our-services #services .card img {
   height: 100%;
   max-width: 100%;
   object-fit: cover;
-  border-radius: 1rem;
+  border-radius: 1.3rem;
+  object-position: top center;
 }
-main #our-services #services .card .title {
-  margin-top: 0.8rem;
+#home #our-services #services .card .title {
   text-transform: uppercase;
-  font-style: italic;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: #f5f5f5;
+  text-shadow: 1px 1px #333333;
+  background-color: rgba(51, 51, 51, 0.0509803922);
 }
-main #our-services #services .card .slogan {
-  line-height: 1.25;
-  font-size: 0.9rem;
-  text-align: justify;
-}
-main #venue-and-partners h2 {
+#home #venue-and-partners h2 {
   color: #f5f5f5;
 }
-main #venue-and-partners #content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+#home #venue-and-partners #content {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 1fr;
   gap: 1rem;
 }
-main #venue-and-partners #content #or {
+#home #venue-and-partners #content #venue {
+  width: 100%;
+}
+#home #venue-and-partners #content #venue iframe {
+  width: 100%;
   height: 100%;
 }
-main #venue-and-partners #content #or span {
+#home #venue-and-partners #content #or {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+#home #venue-and-partners #content #or span {
   color: #f5f5f5;
   font-size: 2.5rem;
   font-style: italic;
   font-family: "Permanent Marker", serif;
 }
-main #venue-and-partners #content #delivery-partners {
+#home #venue-and-partners #content #delivery-partners {
   height: 100%;
   width: 100%;
   border: 1px solid #333333;
 }
-main #venue-and-partners #content #delivery-partners h3 {
+#home #venue-and-partners #content #delivery-partners h3 {
   color: #f5f5f5;
 }
-main #venue-and-partners #content #delivery-partners #options {
+#home #venue-and-partners #content #delivery-partners #options {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 1rem;
   align-items: center;
 }
-main #venue-and-partners #content #delivery-partners #options img {
+#home #venue-and-partners #content #delivery-partners #options img {
   display: inline-block;
   padding: 1rem;
   background-color: #f5f5f5;
@@ -407,7 +396,7 @@ main #venue-and-partners #content #delivery-partners #options img {
   border-radius: 1rem;
   cursor: pointer;
 }
-main #event-blogs {
+#home #event-blogs {
   height: auto;
   display: flex;
   flex-direction: column;
@@ -415,20 +404,20 @@ main #event-blogs {
   align-items: start;
   gap: 0;
 }
-main #event-blogs #moreBlogs {
+#home #event-blogs #moreBlogs {
   background-color: #d32f2f;
   color: #f5f5f5;
   align-self: flex-end;
   margin-bottom: 1rem;
 }
-main #event-blogs #containor {
+#home #event-blogs #containor {
   display: grid;
   grid-template-columns: 6fr 2fr 2fr;
   grid-template-rows: repeat(2, 1fr);
   gap: 1rem;
   padding: 1rem 2rem;
 }
-main #event-blogs #containor .card {
+#home #event-blogs #containor .card {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 6fr 2fr;
@@ -438,31 +427,31 @@ main #event-blogs #containor .card {
   border-radius: 1rem;
   border: 1px solid #333333;
 }
-main #event-blogs #containor .card .content {
+#home #event-blogs #containor .card .content {
   width: 100%;
 }
-main #event-blogs #containor .card img {
+#home #event-blogs #containor .card img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   border-radius: inherit;
 }
-main #event-blogs #containor .card .title {
+#home #event-blogs #containor .card .title {
   font-size: 1rem;
 }
-main #event-blogs #containor .card .summary {
+#home #event-blogs #containor .card .summary {
   display: none;
 }
-main #event-blogs #containor .main {
+#home #event-blogs #containor .main {
   grid-column: 1/2;
   grid-row: 1/3;
 }
-main #event-blogs #containor .main .title {
+#home #event-blogs #containor .main .title {
   font-size: 1.5rem;
   font-weight: bold;
   text-align: left;
 }
-main #event-blogs #containor .main .summary {
+#home #event-blogs #containor .main .summary {
   margin-top: 0.5rem;
   display: inline-block;
   font-size: 0.9rem;
@@ -496,6 +485,7 @@ footer #subscribe h2 {
   font-size: 3rem;
   text-shadow: 1px 1px #f5f5f5;
   letter-spacing: 1px;
+  text-align: center;
 }
 footer #subscribe #form {
   display: flex;
@@ -544,7 +534,56 @@ footer #side-bar #availability #time-table {
   gap: 0;
 }
 
+@media screen and (max-width: 1024px) {
+  #home > section h2 {
+    font-size: 2.25rem;
+  }
+  #home #venue-and-partners #content #delivery-partners #options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    align-items: center;
+  }
+  #home #venue-and-partners #content #delivery-partners #options img {
+    height: 80px;
+    padding: 0.8rem;
+  }
+  #home #event-blogs #containor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  #home #event-blogs #containor .card {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 200px auto;
+    gap: 1rem;
+  }
+  #home #event-blogs #containor .card:nth-child(4), #home #event-blogs #containor .card:nth-child(5) {
+    display: none;
+  }
+  #home #event-blogs #containor .main .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+  }
+  #home #event-blogs #containor .main .summary {
+    margin-top: 0.5rem;
+    display: inline-block;
+    font-size: 1.1rem;
+    text-align: justify;
+  }
+}
 @media screen and (max-width: 768px) {
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+  }
   header #contact-navigation {
     display: none;
   }
@@ -583,22 +622,123 @@ footer #side-bar #availability #time-table {
   header #navigation-menu #navigation #theHam .hamb-line::after {
     top: -8px;
   }
-  header #navigation-menu #navigation #side-menu:checked ~ #theHam .hamb-line {
+  header #navigation-menu #navigation #theHam.active .hamb-line {
     background-color: transparent;
+    z-index: 2;
   }
-  header #navigation-menu #navigation #side-menu:checked ~ #theHam .hamb-line::before {
+  header #navigation-menu #navigation #theHam.active .hamb-line::before {
     transform: rotate(-45deg);
     top: 0;
   }
-  header #navigation-menu #navigation #side-menu:checked ~ #theHam .hamb-line::after {
+  header #navigation-menu #navigation #theHam.active .hamb-line::after {
     transform: rotate(45deg);
     top: 0;
   }
-  header #navigation-menu #navigation #side-menu:checked ~ nav {
+  header #navigation-menu #navigation #theHam.active ~ nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 2rem;
+  }
+  #home > section {
+    padding: 0.5rem 1rem;
+  }
+  #home > section h2 {
+    font-size: 1.8rem;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  #home #hero #content h1 {
+    font-size: 4rem;
+  }
+  #home #hero #content #btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+  #home #our-services #services {
+    margin-top: 1rem;
+    padding: 0 1rem;
+  }
+  #home #venue-and-partners #content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto 1fr;
+    gap: 1rem;
+  }
+  #home #venue-and-partners #content #or {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+  #home #venue-and-partners #content #delivery-partners #options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-rows: 1fr;
+    gap: 1rem;
+  }
+  #home #venue-and-partners #content #delivery-partners #options img {
+    height: 80px;
+  }
+  footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  footer #subscribe #form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+  footer #subscribe #form input {
+    height: 50px;
+    width: 100%;
+  }
+  footer #side-bar #connect {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    gap: 1rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  #home > section {
+    padding: 0.5rem 1rem;
+  }
+  #home > section h2 {
+    font-size: 1.5rem;
+  }
+  #home #hero #content h1 {
+    font-size: 2rem;
+  }
+  #home #event-blogs #containor {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+  footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  footer #side-bar #connect {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
   }
 }/*# sourceMappingURL=style.css.map */

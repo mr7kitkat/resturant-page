@@ -287,7 +287,7 @@
       <section id="menu-page"></section>
 
       <!-- BLOGS AND EVENTS -->
-      <section id="events-page">
+      <section id="events-page" class="hide">
         <h1>Events and Blogs</h1>
         <section id="containor">
           <!-- topic 1 -->
@@ -494,7 +494,49 @@
       </section>
 
       <!-- Contact -->
-      <section id="contact"></section>
+      <section id="contact">
+        <section id="form">
+          <form action="#" method="post">
+            <section class="row">
+              <label for="name">
+                <span class="title">Name</span>
+                <input type="text" name="name" placeholder="Full Name" />
+              </label>
+            </section>
+            <section class="row">
+              <label for="mobile">
+                <span class="title">Mobile</span>
+                <input
+                  type="tel"
+                  id="mobile"
+                  name="mobile"
+                  placeholder="Mobile Number"
+                  title="Please enter a 10-digit mobile number"
+                  required
+                />
+              </label>
+              <label for="email">
+                <span class="title">Email</span>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="Email"
+                />
+              </label>
+            </section>
+            <section class="row">
+              <label for="query">
+                <span>Please provide your query</span>
+                <textarea name="query" id="query"></textarea>
+              </label>
+            </section>
+            <section class="row">
+              <input type="submit" value="Submit" />
+            </section>
+          </form>
+        </section>
+      </section>
     </main>
     <footer>
       <section id="subscribe">

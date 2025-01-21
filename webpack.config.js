@@ -8,7 +8,7 @@ module.exports = {
     entry: "./source/scripts/index.js",
     output: {
         filename: "main.js",
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "output"),
         clean: true,
     },
     devtool: "eval-source-map",

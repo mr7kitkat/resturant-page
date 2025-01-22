@@ -494,46 +494,44 @@
       </section>
 
       <!-- Contact -->
-      <section id="contact">
+      <section id="contact" class="hide">
+        <section id="traditional-contact">
+          <section class="card">
+            <img src="./assets/contact/phone.png" alt="Mobile" />
+            <a href="tel:+91-8409725709">8409725709</a>
+          </section>
+          <section class="card">
+            <img src="./assets/contact/email.png" alt="Email" />
+            <a href="mailto:mr7kitkat@gmail.com">mr7kitkat@gmail.com</a>
+          </section>
+        </section>
         <section id="form">
+          <h2>Contact Form</h2>
           <form action="#" method="post">
-            <section class="row">
-              <label for="name">
-                <span class="title">Name</span>
-                <input type="text" name="name" placeholder="Full Name" />
-              </label>
-            </section>
-            <section class="row">
-              <label for="mobile">
-                <span class="title">Mobile</span>
-                <input
-                  type="tel"
-                  id="mobile"
-                  name="mobile"
-                  placeholder="Mobile Number"
-                  title="Please enter a 10-digit mobile number"
-                  required
-                />
-              </label>
-              <label for="email">
-                <span class="title">Email</span>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Email"
-                />
-              </label>
-            </section>
-            <section class="row">
-              <label for="query">
-                <span>Please provide your query</span>
-                <textarea name="query" id="query"></textarea>
-              </label>
-            </section>
-            <section class="row">
-              <input type="submit" value="Submit" />
-            </section>
+            <label for="name">
+              <span class="title">Name</span>
+              <input type="text" name="name" placeholder="Full Name" />
+            </label>
+            <label for="mobile">
+              <span class="title">Mobile</span>
+              <input
+                type="tel"
+                id="mobile"
+                name="mobile"
+                placeholder="Mobile Number"
+                title="Please enter a 10-digit mobile number"
+                required
+              />
+            </label>
+            <label for="email">
+              <span class="title">Email</span>
+              <input type="email" name="email" id="email" placeholder="Email" />
+            </label>
+            <label for="query">
+              <span class="title">Please provide your query</span>
+              <textarea name="query" id="query"></textarea>
+            </label>
+            <input type="submit" value="Submit" />
           </form>
         </section>
       </section>

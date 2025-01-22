@@ -512,6 +512,83 @@ header {
   }
 }
 
+#contact {
+  height: minmax(100vh, auto);
+  padding: 1rem;
+  @include flex($direction: column, $gap: 2rem);
+  $width: 768px;
+
+  & > section {
+    width: 100%;
+    max-width: $width;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  #traditional-contact {
+    @include grid($cols: 1fr 1fr, $gap: 1rem);
+
+    .card {
+      @include flex($gap: 1rem);
+
+      &:first-child {
+        border-right: 2px solid lightgray;
+      }
+
+      img {
+        width: 24px;
+      }
+
+      a {
+        font-size: 1.1rem;
+        color: $charcoal;
+        font-weight: bold;
+      }
+    }
+  }
+
+  #form {
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      @include flex($direction: column, $align: start, $gap: 1rem);
+      label {
+        width: 100%;
+        @include flex($direction: column, $align: start);
+
+        input,
+        textarea {
+          width: 100%;
+          padding: 0.25rem;
+          border-radius: 0.2rem;
+          outline: none;
+          border: 1px solid lightgray;
+        }
+      }
+
+      [type="submit"] {
+        width: 100%;
+        padding: 0.25rem;
+        text-transform: uppercase;
+        border-radius: 1rem;
+        outline: none;
+        border: none;
+        cursor: pointer;
+
+        &:hover,
+        &:active,
+        &:focus {
+          background-color: $yellow;
+        }
+      }
+    }
+  }
+}
+
 // FOOTER
 footer {
   height: auto;
@@ -853,6 +930,29 @@ footer {
           .footer {
             @include grid($rows: 1fr auto, $gap: 0.5rem);
           }
+        }
+      }
+    }
+  }
+
+  #contact {
+    gap: 1rem;
+    #traditional-contact {
+      @include grid($cols: 1fr, $rows: 1fr 1fr, $gap: 1rem);
+      justify-items: start;
+      .card {
+        @include flex($gap: 1rem);
+
+        &:first-child {
+          border: none;
+        }
+
+        img {
+          width: 1.25rem;
+        }
+
+        a {
+          font-size: 1rem;
         }
       }
     }

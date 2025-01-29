@@ -1,0 +1,81 @@
+$playFair: "Playfair Display", serif;
+$dmSans: "DM Sans", serif;
+$cursive: "Permanent Marker", serif;
+$revolution: "Protest Revolution", serif;
+$defaultSize: 16px;
+
+// Warm Red (#D32F2F) – A deep, vibrant red that evokes warmth, passion, and appetite. It works great for call-to-action buttons or highlighting key menu items.
+$red: #d32f2f;
+// Creamy Beige (#F5F5F5) – A soft, neutral beige for the background, providing a warm, welcoming atmosphere without overwhelming the senses.
+$beige: #f5f5f5;
+// Dark Charcoal (#333333) – A rich, dark gray for text and navigation elements, providing excellent contrast for readability while feeling less harsh than pure black.
+$charcoal: #333333;
+// Golden Yellow (#FBC02D) – A warm, golden hue that can be used for accents, hover effects, or small details to bring some liveliness and energy to the page.
+$yellow: #fbc02d;
+// Olive Green (#6B8E23) – A muted, earthy green that can be used to highlight sustainable practices or fresh ingredients, evoking a sense of health and nature.
+$green: #6b8e23;
+// Soft White (#FFFFFF) – A clean, crisp white for sections that need high contrast, such as menu items, headings, or images.
+$white: #ffffff;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  box-sizing: border-box;
+}
+
+@mixin flex($direction: row, $justify: center, $align: center, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin grid($cols: 1fr, $rows: 1fr, $gap: 0) {
+  display: grid;
+  grid-template-columns: $cols;
+  grid-template-rows: $rows;
+  gap: $gap;
+}
+
+.hide {
+  display: none !important;
+}
+
+body {
+  font-family: $dmSans;
+  font-size: $defaultSize;
+  color: $charcoal;
+  background-color: $beige;
+  max-width: 1550px;
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+
+  button {
+    background-color: $beige;
+    color: $charcoal;
+    outline: none;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 2.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
+}

@@ -79,6 +79,10 @@ body {
   box-sizing: border-box;
 }
 
+.hide {
+  display: none !important;
+}
+
 body {
   font-family: "DM Sans", serif;
   font-size: 16px;
@@ -107,10 +111,6 @@ body button {
 }
 body button:hover {
   transform: scale(1.15);
-}
-
-.hide {
-  display: none !important;
 }
 
 header {
@@ -214,6 +214,70 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
   color: #333333;
 }
 
+@media screen and (max-width: 768px) {
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+  }
+  header #contact-navigation {
+    display: none;
+  }
+  header #navigation-menu #navigation nav {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    background-color: #333333;
+    display: none;
+  }
+  header #navigation-menu #navigation nav a {
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  header #navigation-menu #navigation #theHam .hamb-line {
+    background-color: #f5f5f5;
+    display: block;
+    height: 2px;
+    position: relative;
+    width: 24px;
+  }
+  header #navigation-menu #navigation #theHam .hamb-line::after, header #navigation-menu #navigation #theHam .hamb-line::before {
+    content: "";
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all 0.2s ease-out;
+    width: 100%;
+    top: 8px;
+    background-color: #f5f5f5;
+  }
+  header #navigation-menu #navigation #theHam .hamb-line::after {
+    top: -8px;
+  }
+  header #navigation-menu #navigation #theHam.active .hamb-line {
+    background-color: transparent;
+    z-index: 2;
+  }
+  header #navigation-menu #navigation #theHam.active .hamb-line::before {
+    transform: rotate(-45deg);
+    top: 0;
+  }
+  header #navigation-menu #navigation #theHam.active .hamb-line::after {
+    transform: rotate(45deg);
+    top: 0;
+  }
+  header #navigation-menu #navigation #theHam.active ~ nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+}
 #home-page > section {
   height: 100%;
   width: 100%;
@@ -463,6 +527,114 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
   text-align: justify;
 }
 
+@media screen and (max-width: 1024px) {
+  #home-page > section h2 {
+    font-size: 2.25rem;
+  }
+  #home-page #venue-and-partners #content #delivery-partners #options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    align-items: center;
+  }
+  #home-page #venue-and-partners #content #delivery-partners #options img {
+    height: 80px;
+    padding: 0.8rem;
+  }
+  #home-page #event-blogs #containor {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+  }
+  #home-page #event-blogs #containor .card {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 200px auto;
+    gap: 1rem;
+  }
+  #home-page #event-blogs #containor .card:nth-child(4), #home-page #event-blogs #containor .card:nth-child(5) {
+    display: none;
+  }
+  #home-page #event-blogs #containor .main .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: left;
+  }
+  #home-page #event-blogs #containor .main .summary {
+    margin-top: 0.5rem;
+    display: inline-block;
+    font-size: 1.1rem;
+    text-align: justify;
+  }
+}
+@media screen and (max-width: 768px) {
+  #home-page > section {
+    padding: 0.5rem 1rem;
+  }
+  #home-page > section h2 {
+    font-size: 1.8rem;
+    padding-left: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  #home-page #hero #content h1 {
+    font-size: 4rem;
+  }
+  #home-page #hero #content #btns {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+  #home-page #our-services #services {
+    margin-top: 1rem;
+    padding: 0 1rem;
+  }
+  #home-page #venue-and-partners #content {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto 1fr;
+    gap: 1rem;
+  }
+  #home-page #venue-and-partners #content #or {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+  }
+  #home-page #venue-and-partners #content #delivery-partners #options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-rows: 1fr;
+    gap: 1rem;
+  }
+  #home-page #venue-and-partners #content #delivery-partners #options img {
+    height: 80px;
+  }
+}
+@media screen and (max-width: 480px) {
+  #home-page > section {
+    padding: 0.5rem 1rem;
+  }
+  #home-page > section h2 {
+    font-size: 1.5rem;
+  }
+  #home-page #hero #content h1 {
+    font-size: 2rem;
+  }
+  #home-page #event-blogs #containor {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+}
 #events-page {
   display: flex;
   flex-direction: column;
@@ -546,6 +718,63 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
   background-color: #fbc02d;
 }
 
+@media screen and (max-width: 1024px) {
+  #events-page {
+    padding: 1rem 2rem;
+  }
+  #events-page h1 {
+    font-size: 3rem;
+  }
+  #events-page #containor .card {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 400px 1fr;
+    gap: 1rem;
+  }
+  #events-page #containor .card .details .footer {
+    margin-top: 1rem;
+    padding: 1rem auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  #events-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    padding: 0.5rem;
+  }
+  #events-page h1 {
+    font-size: 2.6rem;
+    text-decoration: underline;
+  }
+  #events-page #containor {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 2rem;
+  }
+  #events-page #containor .card .details {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 3fr auto;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+  }
+  #events-page #containor .card .details .title {
+    font-size: 1.8rem;
+  }
+  #events-page #containor .card .details .description {
+    font-size: 1rem;
+  }
+  #events-page #containor .card .details .footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto;
+    gap: 0.5rem;
+  }
+}
 #contact {
   height: minmax(100vh, auto);
   padding: 1rem;
@@ -626,6 +855,164 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
   background-color: #fbc02d;
 }
 
+@media screen and (max-width: 768px) {
+  #contact {
+    gap: 1rem;
+  }
+  #contact #traditional-contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1rem;
+    justify-items: start;
+  }
+  #contact #traditional-contact .card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+  #contact #traditional-contact .card:first-child {
+    border: none;
+  }
+  #contact #traditional-contact .card img {
+    width: 1.25rem;
+  }
+  #contact #traditional-contact .card a {
+    font-size: 1rem;
+  }
+}
+#menu-page {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  grid-template-rows: 1fr;
+  gap: 0;
+}
+#menu-page #content {
+  width: 100%;
+  padding: 1rem;
+}
+#menu-page #content h1 {
+  font-size: 3rem;
+}
+#menu-page #content #menu-containor {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-rows: 1fr;
+  gap: 1rem;
+  height: auto;
+}
+#menu-page #content #menu-containor .card {
+  padding: 1rem;
+  position: relative;
+  border-radius: 1rem;
+  transition: all 0.5s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 1rem;
+}
+#menu-page #content #menu-containor .card:hover {
+  transform: scale(1.01);
+  box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.5);
+}
+#menu-page #content #menu-containor .card img {
+  height: 200px;
+  object-fit: cover;
+}
+#menu-page #content #menu-containor .card .add-order {
+  border-radius: 1rem;
+  overflow: hidden;
+  background-color: #1a73e8;
+  height: 30px;
+  position: absolute;
+  right: 2rem;
+  margin-top: -20px;
+}
+#menu-page #content #menu-containor .card .add-order button,
+#menu-page #content #menu-containor .card .add-order input {
+  all: unset;
+  background-color: transparent;
+  text-align: center;
+  font-weight: bold;
+  color: #fff;
+  height: 30px;
+  width: 30px;
+}
+#menu-page #content #menu-containor .card button.increase {
+  z-index: 1;
+}
+#menu-page #content #menu-containor .card .title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+#menu-page #content #menu-containor .card .detail {
+  padding: 1rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+#menu-page #content #menu-containor .card .detail .price {
+  font-size: 1.5rem;
+}
+#menu-page #content #menu-containor .card .detail .submit {
+  background-color: #1a73e8;
+  color: white;
+  border-radius: 1rem;
+  outline: none;
+  border: 0;
+  font-size: 1rem;
+  cursor: pointer;
+}
+#menu-page #content #menu-containor .card .detail .submit:hover {
+  transform: none;
+}
+#menu-page #content #menu-containor .card .active {
+  width: 30px;
+  transition: width 0.4s ease;
+}
+#menu-page #content #menu-containor .card .active button,
+#menu-page #content #menu-containor .card .active input {
+  display: none;
+}
+#menu-page #content #menu-containor .card .active .increase {
+  display: initial;
+}
+#menu-page #cart {
+  height: 100%;
+  width: 100%;
+  background-color: #fbc02d;
+  position: relative;
+}
+#menu-page #cart #order-containor {
+  height: 100%;
+  max-height: 100vh;
+  position: sticky;
+  top: 0;
+  right: 0;
+  padding: 0.5rem;
+}
+#menu-page #cart #order-containor h2 {
+  font-size: 2rem;
+  color: #d32f2f;
+  border-bottom: 1px solid #d32f2f;
+}
+#menu-page #cart #order-containor #order-list {
+  height: 60vh;
+  border: 1px solid #333333;
+}
+#menu-page #cart #summary {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0;
+}
+
 footer {
   height: auto;
   width: 100%;
@@ -702,236 +1089,7 @@ footer #side-bar #availability #time-table {
   gap: 0;
 }
 
-@media screen and (max-width: 1024px) {
-  #home-page > section h2 {
-    font-size: 2.25rem;
-  }
-  #home-page #venue-and-partners #content #delivery-partners #options {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    align-items: center;
-  }
-  #home-page #venue-and-partners #content #delivery-partners #options img {
-    height: 80px;
-    padding: 0.8rem;
-  }
-  #home-page #event-blogs #containor {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    gap: 1rem;
-    padding: 0.5rem 1rem;
-  }
-  #home-page #event-blogs #containor .card {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 200px auto;
-    gap: 1rem;
-  }
-  #home-page #event-blogs #containor .card:nth-child(4), #home-page #event-blogs #containor .card:nth-child(5) {
-    display: none;
-  }
-  #home-page #event-blogs #containor .main .title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: left;
-  }
-  #home-page #event-blogs #containor .main .summary {
-    margin-top: 0.5rem;
-    display: inline-block;
-    font-size: 1.1rem;
-    text-align: justify;
-  }
-  #events-page {
-    padding: 1rem 2rem;
-  }
-  #events-page h1 {
-    font-size: 3rem;
-  }
-  #events-page #containor .card {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 400px 1fr;
-    gap: 1rem;
-  }
-  #events-page #containor .card .details .footer {
-    margin-top: 1rem;
-    padding: 1rem auto;
-  }
-}
 @media screen and (max-width: 768px) {
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 3;
-  }
-  header #contact-navigation {
-    display: none;
-  }
-  header #navigation-menu #navigation nav {
-    height: 100vh;
-    width: 100vw;
-    position: fixed;
-    top: 80px;
-    left: 0;
-    background-color: #333333;
-    display: none;
-  }
-  header #navigation-menu #navigation nav a {
-    display: inline-block;
-    width: 200px;
-    text-align: center;
-    font-size: 1.5rem;
-  }
-  header #navigation-menu #navigation #theHam .hamb-line {
-    background-color: #f5f5f5;
-    display: block;
-    height: 2px;
-    position: relative;
-    width: 24px;
-  }
-  header #navigation-menu #navigation #theHam .hamb-line::after, header #navigation-menu #navigation #theHam .hamb-line::before {
-    content: "";
-    display: block;
-    height: 100%;
-    position: absolute;
-    transition: all 0.2s ease-out;
-    width: 100%;
-    top: 8px;
-    background-color: #f5f5f5;
-  }
-  header #navigation-menu #navigation #theHam .hamb-line::after {
-    top: -8px;
-  }
-  header #navigation-menu #navigation #theHam.active .hamb-line {
-    background-color: transparent;
-    z-index: 2;
-  }
-  header #navigation-menu #navigation #theHam.active .hamb-line::before {
-    transform: rotate(-45deg);
-    top: 0;
-  }
-  header #navigation-menu #navigation #theHam.active .hamb-line::after {
-    transform: rotate(45deg);
-    top: 0;
-  }
-  header #navigation-menu #navigation #theHam.active ~ nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-  }
-  #home-page > section {
-    padding: 0.5rem 1rem;
-  }
-  #home-page > section h2 {
-    font-size: 1.8rem;
-    padding-left: 1rem;
-    margin-bottom: 0.5rem;
-  }
-  #home-page #hero #content h1 {
-    font-size: 4rem;
-  }
-  #home-page #hero #content #btns {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0;
-  }
-  #home-page #our-services #services {
-    margin-top: 1rem;
-    padding: 0 1rem;
-  }
-  #home-page #venue-and-partners #content {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto 1fr;
-    gap: 1rem;
-  }
-  #home-page #venue-and-partners #content #or {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 0;
-  }
-  #home-page #venue-and-partners #content #delivery-partners #options {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    grid-template-rows: 1fr;
-    gap: 1rem;
-  }
-  #home-page #venue-and-partners #content #delivery-partners #options img {
-    height: 80px;
-  }
-  #events-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 0;
-    padding: 0.5rem;
-  }
-  #events-page h1 {
-    font-size: 2.6rem;
-    text-decoration: underline;
-  }
-  #events-page #containor {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    gap: 2rem;
-  }
-  #events-page #containor .card .details {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 3fr auto;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-  }
-  #events-page #containor .card .details .title {
-    font-size: 1.8rem;
-  }
-  #events-page #containor .card .details .description {
-    font-size: 1rem;
-  }
-  #events-page #containor .card .details .footer {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr auto;
-    gap: 0.5rem;
-  }
-  #contact {
-    gap: 1rem;
-  }
-  #contact #traditional-contact {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 1rem;
-    justify-items: start;
-  }
-  #contact #traditional-contact .card {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-  }
-  #contact #traditional-contact .card:first-child {
-    border: none;
-  }
-  #contact #traditional-contact .card img {
-    width: 1.25rem;
-  }
-  #contact #traditional-contact .card a {
-    font-size: 1rem;
-  }
   footer {
     display: grid;
     grid-template-columns: 1fr;
@@ -958,22 +1116,6 @@ footer #side-bar #availability #time-table {
   }
 }
 @media screen and (max-width: 480px) {
-  #home-page > section {
-    padding: 0.5rem 1rem;
-  }
-  #home-page > section h2 {
-    font-size: 1.5rem;
-  }
-  #home-page #hero #content h1 {
-    font-size: 2rem;
-  }
-  #home-page #event-blogs #containor {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 1rem;
-    padding: 0.5rem;
-  }
   footer {
     display: grid;
     grid-template-columns: 1fr;

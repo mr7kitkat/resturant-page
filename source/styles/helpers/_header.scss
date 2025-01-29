@@ -1,0 +1,167 @@
+@use "_default" as *;
+// THE HEADER PART OF STYLING
+header {
+  @include flex($direction: column);
+
+  // first line or first child or first section of header
+  #contact-navigation {
+    @include flex($justify: space-between);
+    width: 100%;
+    background-color: $charcoal;
+    padding: 0.25rem 1rem;
+
+    // IMAGE
+    img {
+      width: 12px;
+    }
+
+    #old-way-to-contact {
+      @include flex($gap: 1.5rem);
+
+      section {
+        @include flex($gap: 0.3rem);
+
+        img {
+          filter: invert(100%);
+        }
+
+        a {
+          color: $beige;
+          font-size: 0.75rem;
+        }
+      }
+    }
+
+    #social-media-links {
+      @include flex($gap: 0.7rem);
+      margin-inline-end: 2rem;
+
+      img {
+        filter: grayscale(100%) contrast(10%);
+      }
+    }
+  }
+
+  // second part or child or section of header
+  #navigation-menu {
+    @include flex($justify: space-between);
+    width: 100%;
+    background-color: $charcoal;
+    padding: 0.6rem 1rem;
+
+    // styling for logo section
+    #logo-contatinor {
+      @include flex($gap: 1rem);
+
+      img {
+        width: 64px;
+      }
+
+      .title {
+        color: $beige;
+        font-family: $revolution;
+        font-size: 2.6rem;
+        text-transform: uppercase;
+      }
+    }
+
+    #navigation {
+      z-index: 1;
+      #side-menu {
+        display: none;
+      }
+
+      nav {
+        @include flex($gap: 1rem);
+
+        a {
+          color: $yellow;
+          padding: 0.25rem 1rem;
+          font-size: 1.25rem;
+
+          &:hover,
+          &.active {
+            background-color: $yellow;
+            color: $charcoal;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    #contact-navigation {
+      display: none;
+    }
+
+    #navigation-menu {
+      #navigation {
+        nav {
+          height: 100vh;
+          width: 100vw;
+          position: fixed;
+          top: 80px;
+          left: 0;
+          background-color: $charcoal;
+          // @include flex($direction: column, $gap: 2rem);
+          display: none;
+
+          a {
+            display: inline-block;
+            width: 200px;
+            text-align: center;
+            font-size: 1.5rem;
+          }
+        }
+
+        #theHam {
+          .hamb-line {
+            background-color: $beige;
+            display: block;
+            height: 2px;
+            position: relative;
+            width: 24px;
+
+            &::after,
+            &::before {
+              content: "";
+              display: block;
+              height: 100%;
+              position: absolute;
+              transition: all 0.2s ease-out;
+              width: 100%;
+              top: 8px;
+              background-color: $beige;
+            }
+
+            &::after {
+              top: -8px;
+            }
+          }
+        }
+
+        #theHam.active .hamb-line {
+          background-color: transparent;
+          z-index: 2;
+          &::before {
+            transform: rotate(-45deg);
+            top: 0;
+          }
+          &::after {
+            transform: rotate(45deg);
+            top: 0;
+          }
+        }
+
+        #theHam.active ~ nav {
+          @include flex($direction: column, $gap: 2rem);
+        }
+      }
+    }
+  }
+}

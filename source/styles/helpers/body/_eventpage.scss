@@ -1,0 +1,145 @@
+@use "../_default" as *;
+
+#events-page {
+  @include flex($direction: column);
+  padding: 2rem 4rem;
+
+  h1 {
+    font-size: 4rem;
+    text-decoration: underline;
+  }
+
+  #containor {
+    margin-top: 2rem;
+    @include grid($rows: repeat(auto-fit, minmax(1fr, 400px)), $gap: 1.5rem);
+
+    &::after {
+      max-height: fit-content;
+      content: "⬇ Load More";
+      display: inline-block;
+      text-align: center;
+      padding: 0.5rem;
+      width: 100%;
+      max-width: 320px;
+      border-radius: 1.5rem;
+      background-color: white;
+      cursor: pointer;
+      justify-self: center;
+    }
+
+    .card {
+      @include grid($cols: 400px 4fr, $gap: 1rem);
+      background-color: white;
+      border-radius: 1rem;
+      overflow: hidden;
+
+      .image-containor {
+        height: 100%;
+
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .details {
+        @include grid($rows: auto 3fr auto, $gap: 0.5rem);
+        padding: 0.5rem 1rem;
+        .title {
+          font-size: 2.6rem;
+          text-align: left;
+        }
+
+        .description {
+          font-size: 1.1rem;
+          text-align: justify;
+          max-inline-size: 100%;
+        }
+
+        .footer {
+          @include grid($cols: 1fr auto, $gap: 0.5rem);
+          .tags {
+            .tag {
+              font-weight: bold;
+              &::before {
+                content: "#";
+              }
+            }
+          }
+
+          .btn {
+            padding: 4px 1rem;
+            &:hover {
+              background-color: $yellow;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// for devices with maximum width of 1024 px
+@media screen and (max-width: 1024px) {
+  #events-page {
+    padding: 1rem 2rem;
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    #containor {
+      .card {
+        @include grid($rows: 400px 1fr, $cols: 1fr, $gap: 1rem);
+
+        .details {
+          .footer {
+            margin-top: 1rem;
+            padding: 1rem auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+// styling for devices upto 768px
+@media screen and (max-width: 768px) {
+  #events-page {
+    @include flex($direction: column);
+    padding: 0.5rem;
+
+    h1 {
+      font-size: 2.6rem;
+      text-decoration: underline;
+    }
+
+    #containor {
+      @include grid($gap: 2rem);
+
+      .card {
+        // @include grid($cols: 400px 4fr, $gap: 1rem);
+
+        .details {
+          @include grid($rows: auto 3fr auto, $gap: 0.5rem);
+          padding: 0.5rem 1rem;
+          .title {
+            font-size: 1.8rem;
+          }
+
+          .description {
+            font-size: 1rem;
+          }
+
+          .footer {
+            @include grid($rows: 1fr auto, $gap: 0.5rem);
+          }
+        }
+      }
+    }
+  }
+}
+
+// and the final for max with of 480px
+@media screen and (max-width: 480px) {
+}

@@ -3,6 +3,8 @@
 #menu-page {
   width: 100%;
   @include grid(1fr 300px);
+
+  // Content section
   #content {
     width: 100%;
     padding: 1rem;
@@ -10,9 +12,12 @@
       font-size: 3rem;
     }
 
+    // containor styling for menu items
     #menu-containor {
       @include grid($cols: repeat(auto-fill, minmax(200px, 1fr)), $gap: 1rem);
       height: auto;
+
+      // every card
       .card {
         padding: 1rem;
         position: relative;

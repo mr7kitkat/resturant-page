@@ -2,27 +2,23 @@
 export default class {
     constructor() {
         this.pages = [];
-        this.current = null;
     }
 
-    addPage(id) {
-        const target = document.querySelector(id);
-        this.pages.push(target);
+    addPage(node) {
+        this.pages.push(node);
     }
 
     addClass(className) {
         const len = this.pages.length;
         for (let i = 0; i < len; i++) {
-            this.push[i].classList.add(className);
+            this.pages[i].classList.add(className);
         }
     }
 
     removeClass(target, className) {
+        this.addClass(className);
         target.classList.remove(className);
     }
 
-    updateCurrent(target) {
-        this.current = target
-    }
 }
 

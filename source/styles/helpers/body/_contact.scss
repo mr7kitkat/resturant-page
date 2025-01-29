@@ -1,6 +1,6 @@
 @use "../_default" as *;
 // MAIN
-#contact {
+#contact-page {
   height: minmax(100vh, auto);
   padding: 1rem;
   @include flex($direction: column, $gap: 2rem);
@@ -83,7 +83,7 @@
 
 // styling for devices upto 768px
 @media screen and (max-width: 768px) {
-  #contact {
+  #contact-page {
     gap: 1rem;
     #traditional-contact {
       @include grid($cols: 1fr, $rows: 1fr 1fr, $gap: 1rem);

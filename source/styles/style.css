@@ -79,6 +79,10 @@ body {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .hide {
   display: none !important;
 }
@@ -775,7 +779,7 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
     gap: 0.5rem;
   }
 }
-#contact {
+#contact-page {
   height: minmax(100vh, auto);
   padding: 1rem;
   display: flex;
@@ -784,49 +788,49 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
   align-items: center;
   gap: 2rem;
 }
-#contact > section {
+#contact-page > section {
   width: 100%;
   max-width: 768px;
   background-color: white;
   padding: 1rem;
   border-radius: 1rem;
 }
-#contact #traditional-contact {
+#contact-page #traditional-contact {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
   gap: 1rem;
 }
-#contact #traditional-contact .card {
+#contact-page #traditional-contact .card {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 1rem;
 }
-#contact #traditional-contact .card:first-child {
+#contact-page #traditional-contact .card:first-child {
   border-right: 2px solid lightgray;
 }
-#contact #traditional-contact .card img {
+#contact-page #traditional-contact .card img {
   width: 24px;
 }
-#contact #traditional-contact .card a {
+#contact-page #traditional-contact .card a {
   font-size: 1.1rem;
   color: #333333;
   font-weight: bold;
 }
-#contact #form h2 {
+#contact-page #form h2 {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
-#contact #form form {
+#contact-page #form form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: start;
   gap: 1rem;
 }
-#contact #form form label {
+#contact-page #form form label {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -834,15 +838,15 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
   align-items: start;
   gap: 0;
 }
-#contact #form form label input,
-#contact #form form label textarea {
+#contact-page #form form label input,
+#contact-page #form form label textarea {
   width: 100%;
   padding: 0.25rem;
   border-radius: 0.2rem;
   outline: none;
   border: 1px solid lightgray;
 }
-#contact #form form [type=submit] {
+#contact-page #form form [type=submit] {
   width: 100%;
   padding: 0.25rem;
   text-transform: uppercase;
@@ -851,35 +855,35 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
   border: none;
   cursor: pointer;
 }
-#contact #form form [type=submit]:hover, #contact #form form [type=submit]:active, #contact #form form [type=submit]:focus {
+#contact-page #form form [type=submit]:hover, #contact-page #form form [type=submit]:active, #contact-page #form form [type=submit]:focus {
   background-color: #fbc02d;
 }
 
 @media screen and (max-width: 768px) {
-  #contact {
+  #contact-page {
     gap: 1rem;
   }
-  #contact #traditional-contact {
+  #contact-page #traditional-contact {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 1rem;
     justify-items: start;
   }
-  #contact #traditional-contact .card {
+  #contact-page #traditional-contact .card {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     gap: 1rem;
   }
-  #contact #traditional-contact .card:first-child {
+  #contact-page #traditional-contact .card:first-child {
     border: none;
   }
-  #contact #traditional-contact .card img {
+  #contact-page #traditional-contact .card img {
     width: 1.25rem;
   }
-  #contact #traditional-contact .card a {
+  #contact-page #traditional-contact .card a {
     font-size: 1rem;
   }
 }

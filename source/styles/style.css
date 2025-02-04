@@ -903,89 +903,99 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
 }
 #menu-page #content #menu-containor {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-template-rows: 1fr;
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  grid-template-rows: 300px;
+  gap: 1.5rem;
+  grid-auto-rows: 300px;
   height: auto;
 }
 #menu-page #content #menu-containor .card {
-  padding: 1rem;
+  width: 100%;
+  height: 100%;
   position: relative;
-  border-radius: 1rem;
-  transition: all 0.5s ease;
-  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: grid;
+  grid-template-rows: 6fr 3fr;
+  row-gap: 0.5rem;
   cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  gap: 1rem;
+  transition: all 0.4s ease-in;
 }
 #menu-page #content #menu-containor .card:hover {
-  transform: scale(1.01);
-  box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.5);
+  transform: scale(1.1);
 }
-#menu-page #content #menu-containor .card img {
-  height: 200px;
+#menu-page #content #menu-containor .card .image-containor {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border: none;
+}
+#menu-page #content #menu-containor .card .image-containor img {
+  height: 100%;
+  width: 100%;
+  border-radius: 6px;
   object-fit: cover;
 }
-#menu-page #content #menu-containor .card .add-order {
-  border-radius: 1rem;
-  overflow: hidden;
-  background-color: #1a73e8;
-  height: 30px;
-  position: absolute;
-  right: 2rem;
-  margin-top: -20px;
-}
-#menu-page #content #menu-containor .card .add-order button,
-#menu-page #content #menu-containor .card .add-order input {
-  all: unset;
-  background-color: transparent;
-  text-align: center;
-  font-weight: bold;
-  color: #fff;
-  height: 30px;
-  width: 30px;
-}
-#menu-page #content #menu-containor .card button.increase {
-  z-index: 1;
-}
-#menu-page #content #menu-containor .card .title {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-#menu-page #content #menu-containor .card .detail {
-  padding: 1rem 0.5rem;
-  display: flex;
-  justify-content: space-between;
+#menu-page #content #menu-containor .card .details {
+  position: relative;
   width: 100%;
 }
-#menu-page #content #menu-containor .card .detail .price {
-  font-size: 1.5rem;
-}
-#menu-page #content #menu-containor .card .detail .submit {
-  background-color: #1a73e8;
-  color: white;
-  border-radius: 1rem;
-  outline: none;
-  border: 0;
-  font-size: 1rem;
-  cursor: pointer;
-}
-#menu-page #content #menu-containor .card .detail .submit:hover {
-  transform: none;
-}
-#menu-page #content #menu-containor .card .active {
-  width: 30px;
-  transition: width 0.4s ease;
-}
-#menu-page #content #menu-containor .card .active button,
-#menu-page #content #menu-containor .card .active input {
+#menu-page #content #menu-containor .card .details .qty-containor {
+  position: absolute;
+  display: flex;
+  top: -20px;
+  right: 10px;
   display: none;
 }
-#menu-page #content #menu-containor .card .active .increase {
-  display: initial;
+#menu-page #content #menu-containor .card .details .qty-containor.active {
+  display: flex;
+}
+#menu-page #content #menu-containor .card .details .qty-containor button,
+#menu-page #content #menu-containor .card .details .qty-containor input {
+  all: unset;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  background-color: lightgray;
+  height: 20px;
+  width: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+#menu-page #content #menu-containor .card .details .title {
+  font-size: 1.3rem;
+  line-height: 1.2;
+  font-weight: 600;
+}
+#menu-page #content #menu-containor .card .details .order-btns {
+  width: 100%;
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 0 4px; */
+}
+#menu-page #content #menu-containor .card .details .order-btns button {
+  all: unset;
+  padding: 4px 8px;
+  background-color: lightgray;
+  font-weight: 600;
+}
+#menu-page #content #menu-containor .card .details .order-btns button:hover {
+  background-color: #fbc02d;
+}
+#menu-page #content #menu-containor .card .details .order-btns .price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-right: 4px;
+}
+#menu-page #content #menu-containor .card .details .order-btns .price::before {
+  content: "$";
 }
 #menu-page #cart {
   height: 100%;

@@ -1,43 +1,49 @@
-import ordermanager from "./ordermanager";
+import Cell from "./cell"
 
-class RenderingEngine extends ordermanager {
-    constructor(parentNode, data) {
-        super(data)
-        this.current_view = [...this.data]
-        this.parentNode = parentNode
-        this.render();
+export default class {
+    constructor(data, parentNode) {
+        this.data = data.map(dataPoint => new Cell(dataPoint))
+        this.parentNode = parentNode;
+        this.render()
+        this.orders = [];
     }
 
-
     render() {
-        let strHTML = ""
-        this.data.forEach(item => {
-            strHTML += `
-                    <section class="card">
-                    <section class="image-containor">
-                        <img src=${item.url} alt="">
-                    </section>
-                    <section class="details">
-                        <section class="qty-containor"  data-idx=${item.id}>
-                        <button class="minus">-</button>
-                        <input type="text" class="qty" value=${item.qty}>
-                        <button class="plus">+</button>
-                        </section>
-                        <p class="title">${item.title}</p>
-                        <section class="order-btns">
-                        <button class="add" data-idx=${item.id}>Place Order</button>
-                        <span class="price">${item.price}</span>
-                        </section>
-                    </section>
-                    </section>
-                    `;
+        let strHTML = "";
+
+        this.data.forEach(element => {
+            strHTML += element.render();
         });
 
         this.parentNode.innerHTML = strHTML;
+        this.addBtnsHandler()
+        this.placeBtnsHandler()
     }
 
 
-}
+    addBtnsHandler() {
+        const btns = this.parentNode.querySelectorAll("button.add");
+
+        btns.forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                const idx = e.target.dataset.idx;
+                this.data[idx].upQty()
+                this.render()
+            })
+        })
+    }
 
 
-export default RenderingEngine
+    placeBtnsHandler() {
+        const btns = this.parentNode.querySelectorAll("button.orderBtn");
+
+        btns.forEach(btn => {
+            btn.addEventListener("click", (e) => {
+                const idx = e.target.dataset.idx;
+                const item = this.data[idx];
+                this.orders.push(item)
+                this.render()
+            })
+        })
+    }
+} 

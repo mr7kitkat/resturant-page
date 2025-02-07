@@ -923,7 +923,7 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
   transition: all 0.4s ease-in;
 }
 #menu-page #content #menu-containor .card:hover {
-  transform: scale(1.1);
+  transform: scale(1.01);
 }
 #menu-page #content #menu-containor .card .image-containor {
   height: 100%;

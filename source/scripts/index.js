@@ -31,14 +31,5 @@ NavigationManager.list().forEach(link => {
 
 // Adding Menu to pages
 const CONTAINOR = document.querySelector("#menu-containor");
-const RE = new RenderingEngine(CONTAINOR, data);
-[...CONTAINOR.children].forEach(item => {
-    const addBtn = item.querySelector(".add");
-    const qtyContainor = item.querySelector(".qty-containor");
-    const qtyBox = qtyContainor.querySelector("input")
+const RE = new RenderingEngine(data, CONTAINOR);
 
-    addBtn.addEventListener("click", function (e) {
-        RE.incrementItem(e.target.dataset.idx);
-        qtyContainor.classList.add("active");
-    })
-})

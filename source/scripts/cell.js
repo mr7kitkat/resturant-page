@@ -11,18 +11,21 @@ export default class {
     // render 
     render() {
         const status = this.qty > 0 ? `qty-containor active` : "qty-containor";
-        const btn = this.qty > 0 ? `<button class="orderBtn" data-idx=${this.id}>Place Order</button>` : `<button class="add" data-idx=${this.id}>Add</button>`;
+        const btn = this.qty > 0 ? `
+            <section class='${status}'  data-idx=${this.id}>
+                <button class="minus">-</button>
+                <input type="text" class="qty" value=${this.qty}>
+                <button class="plus">+</button>
+            </section>`
+            : `<button class="add" data-idx=${this.id}>Add</button>`;
+
         return `
         <section class="card">
         <section class="image-containor">
             <img src=${this.url} alt="">
         </section>
         <section class="details">
-            <section class='${status}'  data-idx=${this.id}>
-                <button class="minus">-</button>
-                <input type="text" class="qty" value=${this.qty}>
-                <button class="plus">+</button>
-            </section>
+            
             <p class="title">${this.title}</p>
             <section class="order-btns">
                 ${btn}
@@ -47,13 +50,14 @@ export default class {
     }
 
     changeQty(value) {
-        if (value >= 0) {
-            this.qty = value;
+        const val = Number(value)
+        if (val >= 0) {
+            this.qty = val;
         }
     }
 
     getQty() {
-        return this.qty;
+        return Number(this.qty);
     }
 
     getValue() {

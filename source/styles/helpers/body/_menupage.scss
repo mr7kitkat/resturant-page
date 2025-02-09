@@ -59,35 +59,12 @@
           position: relative;
           width: 100%;
 
-          .qty-containor {
-            position: absolute;
-            display: flex;
-            $size: 20px;
-            top: -$size;
-            right: 10px;
-            display: none;
-
-            &.active {
-              display: flex;
-            }
-
-            button,
-            input {
-              all: unset;
-              @include flex();
-              background-color: lightgray;
-              height: $size;
-              width: $size;
-              text-align: center;
-              font-weight: 600;
-            }
-          }
-
           .title {
             font-size: 1.3rem;
             line-height: 1.2;
             font-weight: 600;
           }
+
           .order-btns {
             width: 100%;
             position: absolute;
@@ -106,6 +83,27 @@
 
               &:hover {
                 background-color: $yellow;
+              }
+            }
+
+            .qty-containor {
+              display: flex;
+              $size: 30px;
+              display: none;
+
+              &.active {
+                display: flex;
+              }
+
+              button,
+              input {
+                all: unset;
+                @include flex();
+                background-color: lightgray;
+                height: $size;
+                width: $size;
+                text-align: center;
+                font-weight: 600;
               }
             }
 

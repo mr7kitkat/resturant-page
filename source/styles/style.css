@@ -941,30 +941,6 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
   position: relative;
   width: 100%;
 }
-#menu-page #content #menu-containor .card .details .qty-containor {
-  position: absolute;
-  display: flex;
-  top: -20px;
-  right: 10px;
-  display: none;
-}
-#menu-page #content #menu-containor .card .details .qty-containor.active {
-  display: flex;
-}
-#menu-page #content #menu-containor .card .details .qty-containor button,
-#menu-page #content #menu-containor .card .details .qty-containor input {
-  all: unset;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
-  background-color: lightgray;
-  height: 20px;
-  width: 20px;
-  text-align: center;
-  font-weight: 600;
-}
 #menu-page #content #menu-containor .card .details .title {
   font-size: 1.3rem;
   line-height: 1.2;
@@ -988,6 +964,27 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
 }
 #menu-page #content #menu-containor .card .details .order-btns button:hover {
   background-color: #fbc02d;
+}
+#menu-page #content #menu-containor .card .details .order-btns .qty-containor {
+  display: flex;
+  display: none;
+}
+#menu-page #content #menu-containor .card .details .order-btns .qty-containor.active {
+  display: flex;
+}
+#menu-page #content #menu-containor .card .details .order-btns .qty-containor button,
+#menu-page #content #menu-containor .card .details .order-btns .qty-containor input {
+  all: unset;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  background-color: lightgray;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  font-weight: 600;
 }
 #menu-page #content #menu-containor .card .details .order-btns .price {
   font-size: 1.2rem;

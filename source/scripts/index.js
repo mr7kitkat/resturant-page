@@ -31,5 +31,6 @@ NavigationManager.list().forEach(link => {
 
 // Adding Menu to pages
 const CONTAINOR = document.querySelector("#menu-containor");
+const CART = document.querySelector("#order-list");
 const RE = new RenderingEngine(data, CONTAINOR);
 

@@ -1,23 +1,26 @@
 export default class {
-    constructor({ id, title, tags, url, qty, price }) {
+    constructor({ id, title, tags, url, qty, price, value = null }) {
         this.id = id;
         this.title = title;
         this.tags = tags;
         this.url = url;
         this.qty = qty;
         this.price = price;
+        this.value = value
     }
 
     // render 
     render() {
         const status = this.qty > 0 ? `qty-containor active` : "qty-containor";
         const btn = this.qty > 0 ? `
-            <section class='${status}'  data-idx=${this.id}>
-                <button class="minus">-</button>
-                <input type="text" class="qty" value=${this.qty}>
-                <button class="plus">+</button>
+            <section class='${status}'>
+                <button data-idx=${this.id} class="minus">-</button>
+                <input data-idx=${this.id} type="text" class="qty" value=${this.qty}>
+                <button data-idx=${this.id} class="plus">+</button>
             </section>`
             : `<button class="add" data-idx=${this.id}>Add</button>`;
+
+
 
         return `
         <section class="card">
@@ -29,7 +32,7 @@ export default class {
             <p class="title">${this.title}</p>
             <section class="order-btns">
                 ${btn}
-                <span class="price">${this.price}</span>
+                <span class="price" title="Price per plate">${Boolean(this.value) === true ? this.value : this.price}</span>
             </section>
         </section>
         </section>
@@ -57,12 +60,7 @@ export default class {
     }
 
     getQty() {
-        return Number(this.qty);
+        return this.qty
     }
-
-    getValue() {
-        return this.qty * this.price
-    }
-
 
 }

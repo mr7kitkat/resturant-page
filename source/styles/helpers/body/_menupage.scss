@@ -2,7 +2,7 @@
 // MAIN
 #menu-page {
   width: 100%;
-  @include grid(1fr 300px);
+  @include grid(1fr auto);
 
   // Content section
   #content {
@@ -36,10 +36,6 @@
         row-gap: 0.5rem;
         cursor: pointer;
         transition: all 0.4s ease-in;
-
-        &:hover {
-          transform: scale(1.01);
-        }
 
         .image-containor {
           height: 100%;
@@ -125,6 +121,7 @@
   #cart {
     height: 100%;
     width: 100%;
+    max-width: 300px;
     background-color: $yellow;
     position: relative;
 
@@ -145,6 +142,86 @@
       #order-list {
         height: 60vh;
         border: 1px solid $charcoal;
+        $size: 60px;
+        @include grid($rows: $size, $cols: 1fr, $gap: 0.2rem);
+        grid-auto-rows: $size;
+
+        // every card
+        .card {
+          width: 100%;
+          height: 100%;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          @include grid($cols: $size 1fr, $gap: 0.25rem);
+          cursor: pointer;
+
+          .image-containor {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            border: none;
+
+            img {
+              height: 100%;
+              width: 100%;
+              object-fit: cover;
+            }
+          }
+
+          .details {
+            width: 100%;
+
+            .title {
+              font-size: 1.2rem;
+              line-height: 1.2;
+              font-weight: 600;
+            }
+
+            .order-btns {
+              width: 100%;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              /* padding: 0 4px; */
+
+              button {
+                all: unset;
+
+                display: none;
+              }
+
+              .qty-containor {
+                display: flex;
+                $size: 20px;
+                display: none;
+
+                &.active {
+                  display: flex;
+                }
+
+                button,
+                input {
+                  all: unset;
+                  @include flex();
+                  background-color: lightgray;
+                  height: $size;
+                  width: $size;
+                  text-align: center;
+                  font-weight: 600;
+                }
+              }
+
+              .price {
+                font-size: 1.2rem;
+                font-weight: 600;
+                margin-right: 4px;
+
+                &::before {
+                  content: "$";
+                }
+              }
+            }
+          }
+        }
       }
     }
 

@@ -30,7 +30,7 @@ NavigationManager.list().forEach(link => {
 })
 
 // Adding Menu to pages
+const MENU_PAGE = document.querySelector("#menu-page");
 const CONTAINOR = document.querySelector("#menu-containor");
 const CART = document.querySelector("#order-list");
-const RE = new RenderingEngine(data, CONTAINOR);
-
+const RE = new RenderingEngine(MENU_PAGE, data, CONTAINOR, CART);

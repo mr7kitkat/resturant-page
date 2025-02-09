@@ -1,24 +1,33 @@
 import Cell from "./cell"
 
+function renderers(dataAry, theNode, fn = function () { }) {
+    let strHtml = "";
+    dataAry.forEach(elem => {
+        strHtml += elem.render();
+    })
+
+    theNode.innerHTML = strHtml;
+    fn()
+}
+
+
 export default class {
-    constructor(data, parentNode) {
+    constructor(page, data, parentNode, cartElement) {
         this.data = data.map(dataPoint => new Cell(dataPoint))
+        this.page = page
         this.parentNode = parentNode;
-        this.render();
+        this.cartElement = cartElement;
         this.cart = [];
         this.orders = [];
+        this.render();
     }
 
     render() {
-        let strHTML = "";
-        this.data.forEach(element => {
-            strHTML += element.render();
-        });
-        this.parentNode.innerHTML = strHTML;
-        this.cartUpdator()
-        this.eventListeners()
+        renderers(this.data, this.parentNode, () => {
+            this.cartUpdator();
+            this.eventListeners();
+        })
     }
-
 
     eventListeners() {
         this.addBtnsHandler()
@@ -29,7 +38,7 @@ export default class {
 
 
     addBtnsHandler() {
-        const btns = this.parentNode.querySelectorAll("button.add");
+        const btns = this.page.querySelectorAll("button.add");
 
         btns.forEach(btn => {
             btn.addEventListener("click", (e) => {
@@ -41,15 +50,13 @@ export default class {
 
     }
 
-
-
-
     minusBtnHandler() {
-        const btns = this.parentNode.querySelectorAll("button.minus");
+        const btns = this.page.querySelectorAll("button.minus");
 
         btns.forEach(btn => {
             btn.addEventListener("click", (e) => {
-                const idx = e.target.parentElement.dataset.idx;
+                const idx = e.target.dataset.idx;
+
                 this.data[idx].downQty();
                 this.render()
             })
@@ -57,11 +64,12 @@ export default class {
     }
 
     plusBtnHandler() {
-        const btns = this.parentNode.querySelectorAll("button.plus");
+        const btns = this.page.querySelectorAll("button.plus");
 
         btns.forEach(btn => {
             btn.addEventListener("click", (e) => {
-                const idx = e.target.parentElement.dataset.idx;
+                const idx = e.target.dataset.idx;
+
                 this.data[idx].upQty();
                 this.render()
             })
@@ -69,11 +77,12 @@ export default class {
     }
 
     qtyBoxHandler() {
-        const qtyBoxes = this.parentNode.querySelectorAll("input.qty");
+        const qtyBoxes = this.page.querySelectorAll("input.qty");
 
         qtyBoxes.forEach(box => {
             box.addEventListener("change", (e) => {
-                const idx = e.target.parentElement.dataset.idx;
+                const idx = e.target.dataset.idx;
+
                 this.data[idx].changeQty(e.target.value);
                 this.render()
             })
@@ -82,5 +91,14 @@ export default class {
 
     cartUpdator() {
         this.cart = this.data.filter(item => item.getQty() > 0);
+        this.cart = this.cart.map(item => {
+            return new Cell({
+                ...item,
+                value: item.qty * item.price
+            })
+        });
+
+
+        renderers(this.cart, this.cartElement);
     }
 }

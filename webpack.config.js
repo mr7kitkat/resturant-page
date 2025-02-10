@@ -14,6 +14,7 @@ module.exports = {
         filename: "main.[contenthash].js", // Add content hash for cache busting
         path: path.resolve(__dirname, "output"),
         clean: true, // Clean the output directory
+        publicPath: '/my-website/',
     },
     devtool: "source-map", // Use source map for debugging in production (or hidden-source-map)
     module: {

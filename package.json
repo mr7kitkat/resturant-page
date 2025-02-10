@@ -4,7 +4,8 @@
   "description": "This is a part of the odin project",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "deploy": "npm run build && gh-pages -d output"
   },
   "repository": {
     "type": "git",
@@ -31,5 +32,8 @@
     "webpack": "^5.97.1",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.0"
+  },
+  "dependencies": {
+    "gh-pages": "^6.3.0"
   }
 }

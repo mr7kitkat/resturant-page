@@ -33,7 +33,7 @@ NavigationManager.list().forEach(link => {
 const MENU_PAGE = document.querySelector("#menu-page");
 const CONTAINOR = document.querySelector("#menu-containor");
 const CART = document.querySelector("#order-list");
-const RE = new RenderingEngine(MENU_PAGE, data, CONTAINOR, CART);
+new RenderingEngine(MENU_PAGE, data, CONTAINOR, CART);
 
 // cart open btn
 const CART_OPEN_BTN = document.querySelector("img#showCart");
@@ -46,4 +46,18 @@ CART_OPEN_BTN.addEventListener("click", function () {
 const CART_CLOSE_BTN = document.querySelector("button.close");
 CART_CLOSE_BTN.addEventListener("click", function () {
     MENU_PAGE.classList.remove("active");
+})
+
+
+// MISC BUTTON MANAGEMENT
+const ORDER_NOW_BTN = document.querySelector("main #order");
+ORDER_NOW_BTN.addEventListener("click", function () {
+    PageManager.itemActivate(2)
+    NavigationManager.itemActivate(2)
+});
+
+const MORE_BLOGS_BTN = document.querySelector("#moreBlogs");
+MORE_BLOGS_BTN.addEventListener("click", function () {
+    PageManager.itemActivate(3)
+    NavigationManager.itemActivate(3)
 })

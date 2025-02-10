@@ -353,6 +353,12 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
 #home-page #hero #content #btns #book-table {
   background-color: #fbc02d;
 }
+#home-page #hero #content #btns #order {
+  width: 100%;
+}
+#home-page #hero #content #btns #order:active {
+  background-color: #fbc02d;
+}
 #home-page #our-services {
   padding-left: 0;
   padding-right: 0;
@@ -912,10 +918,18 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
 }
 #menu-page dialog section img {
   height: auto;
-  max-width: 320px;
+  max-width: 300px;
 }
 #menu-page dialog section h1 {
-  font-size: 2rem;
+  font-size: 1.7rem;
+  text-align: center;
+}
+#menu-page dialog section button:hover {
+  transform: none;
+}
+#menu-page dialog section button:active {
+  background-color: green;
+  color: white;
 }
 #menu-page.active #content .heading #showCart {
   display: none;

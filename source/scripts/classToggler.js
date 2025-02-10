@@ -5,7 +5,7 @@ export default class {
         this.clsName = clsName;
         this.toggleMode = toggleMode;
         this.deactivate();
-        this.activate(this.items[1]);
+        this.activate(this.items[0]);
     }
 
     // add a new item to the toggler
@@ -33,6 +33,15 @@ export default class {
         else {
             target.classList.remove(this.clsName);
         }
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth' // Optional: For smooth scrolling
+        });
+    }
+
+    itemActivate(idx) {
+        this.activate(this.items[idx - 1]);
     }
 
 

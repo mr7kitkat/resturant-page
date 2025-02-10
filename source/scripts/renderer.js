@@ -18,7 +18,6 @@ export default class {
         this.parentNode = parentNode;
         this.cartElement = cartElement;
         this.cart = [];
-        this.orders = [];
         this.render();
     }
 
@@ -34,6 +33,7 @@ export default class {
         this.minusBtnHandler();
         this.plusBtnHandler();
         this.qtyBoxHandler()
+        this.placeOrder()
     }
 
 
@@ -97,7 +97,6 @@ export default class {
                 value: item.qty * item.price
             })
         });
-
         if (this.cart.length && window.innerWidth >= 500) {
             this.page.classList.add("active");
         } else {
@@ -107,7 +106,6 @@ export default class {
 
         renderers(this.cart, this.cartElement);
         this.updateTotal()
-        this.placeOrder()
     }
 
 
@@ -127,26 +125,32 @@ export default class {
     }
 
     placeOrder() {
-        const dialog = this.page.querySelector("#menu-page dialog");
         const showBtn = this.page.querySelector("#confirm");
-        const closeBtn = this.page.querySelector("dialog button");
+        const dialog = this.page.querySelector("#orderSuccess");
+        const closeBtn = dialog.querySelector("button");
 
-        showBtn.addEventListener("click", () => {
-            if (this.cart.length > 0) {
-                dialog.showModal();
-            }
-            // need to fix it
-            // this.cart = [];
-            // this.render();
-            // console.log(this.cart)
-        });
+        // Remove previous listener to avoid multiple fires
+        showBtn.removeEventListener("click", this.showModalHandler);
 
-        closeBtn.addEventListener("click", () => {
+        this.showModalHandler = () => {
+            dialog.showModal();
+        };
+
+        showBtn.addEventListener("click", this.showModalHandler);
+
+
+        closeBtn.removeEventListener("click", this.closeModalHandler)
+        this.closeModalHandler = () => {
             dialog.close();
+            this.cart.map(item => {
+                this.data[item.id].qty = 0
+            });
+            this.render()
+        }
 
-        });
-
+        closeBtn.addEventListener("click", this.closeModalHandler);
 
     }
+
 
 }

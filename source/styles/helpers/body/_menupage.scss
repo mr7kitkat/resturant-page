@@ -18,11 +18,22 @@
       background-color: $yellow;
       img {
         height: auto;
-        max-width: 320px;
+        max-width: 300px;
       }
 
       h1 {
-        font-size: 2rem;
+        font-size: 1.7rem;
+        text-align: center;
+      }
+
+      button {
+        &:hover {
+          transform: none;
+        }
+        &:active {
+          background-color: green;
+          color: white;
+        }
       }
     }
   }

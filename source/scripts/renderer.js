@@ -98,7 +98,55 @@ export default class {
             })
         });
 
+        if (this.cart.length && window.innerWidth >= 500) {
+            this.page.classList.add("active");
+        } else {
+            this.page.classList.remove("active");
+
+        }
 
         renderers(this.cart, this.cartElement);
+        this.updateTotal()
+        this.placeOrder()
     }
+
+
+    updateTotal() {
+        let totalQ = 0;
+        let totalV = 0;
+
+        this.cart.map(item => {
+            totalQ += item.getQty();
+            totalV += item.getValue();
+        })
+
+        const totalQty = this.page.querySelector("#total .totalQty")
+        const totalValue = this.page.querySelector("#total .totalValue")
+        totalQty.innerText = `${totalQ} Food Item`
+        totalValue.innerText = `$${totalV}`
+    }
+
+    placeOrder() {
+        const dialog = this.page.querySelector("#menu-page dialog");
+        const showBtn = this.page.querySelector("#confirm");
+        const closeBtn = this.page.querySelector("dialog button");
+
+        showBtn.addEventListener("click", () => {
+            if (this.cart.length > 0) {
+                dialog.showModal();
+            }
+            // need to fix it
+            // this.cart = [];
+            // this.render();
+            // console.log(this.cart)
+        });
+
+        closeBtn.addEventListener("click", () => {
+            dialog.close();
+
+        });
+
+
+    }
+
 }

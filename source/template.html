@@ -285,8 +285,20 @@
       </section>
       <!-- MENU PAGE -->
       <section id="menu-page">
+        <dialog id="orderSuccess">
+          <section>
+            <img src="./assets/icons/gratitude.png" alt="" />
+            <h1>Your Order Placed Successfully!</h1>
+            <button>Thank You</button>
+          </section>
+
+        </dialog>
         <section id="content">
-          <h1>Menu</h1>
+          <section class="heading">
+            <h1>Menu</h1>
+            <img id="showCart" src="./assets/icons/basket.png" alt="" />
+          </section>
+
           <section id="menu-containor">
             <!-- <section class="card">
                 <img
@@ -308,16 +320,20 @@
         </section>
         <section id="cart">
           <section id="order-containor">
-            <h2>Your Order</h2>
+            <section class="heading">
+              <h2>Your Order</h2>
+              <button class="close">&Cross;</button>
+            </section>
             <section id="order-list"></section>
 
             <section id="summary">
               <section id="total">
-                <span>Total</span>
+                <span>Total:</span>
+                <span class="totalQty">0</span>
+                <span class="totalValue">0</span>
               </section>
               <section id="btns">
-                <button id="Confirm">Confirm</button>
-                <button id="cancel">Cancel</button>
+                <button id="confirm">Place Order</button>
               </section>
             </section>
           </section>

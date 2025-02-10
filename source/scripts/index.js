@@ -34,3 +34,16 @@ const MENU_PAGE = document.querySelector("#menu-page");
 const CONTAINOR = document.querySelector("#menu-containor");
 const CART = document.querySelector("#order-list");
 const RE = new RenderingEngine(MENU_PAGE, data, CONTAINOR, CART);
+
+// cart open btn
+const CART_OPEN_BTN = document.querySelector("img#showCart");
+CART_OPEN_BTN.addEventListener("click", function () {
+    MENU_PAGE.classList.add("active");
+})
+
+
+// cart close btn
+const CART_CLOSE_BTN = document.querySelector("button.close");
+CART_CLOSE_BTN.addEventListener("click", function () {
+    MENU_PAGE.classList.remove("active");
+})

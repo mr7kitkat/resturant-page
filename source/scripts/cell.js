@@ -60,7 +60,17 @@ export default class {
     }
 
     getQty() {
-        return this.qty
+        if (this.qty > 0) {
+            return Number(this.qty)
+        }
+        return 0
+    }
+
+    getValue() {
+        if (this.value) {
+            return Number(this.value)
+        }
+        return 0
     }
 
 }

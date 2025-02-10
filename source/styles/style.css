@@ -222,7 +222,7 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
   header {
     position: sticky;
     top: 0;
-    z-index: 3;
+    z-index: 2;
   }
   header #contact-navigation {
     display: none;
@@ -889,17 +889,67 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
 }
 #menu-page {
   width: 100%;
+  overflow-x: hidden;
   display: grid;
   grid-template-columns: 1fr auto;
   grid-template-rows: 1fr;
   gap: 0;
 }
+#menu-page dialog {
+  height: 100vh;
+  width: 100%;
+  margin: 10px auto;
+}
+#menu-page dialog section {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  background-color: #fbc02d;
+}
+#menu-page dialog section img {
+  height: auto;
+  max-width: 320px;
+}
+#menu-page dialog section h1 {
+  font-size: 2rem;
+}
+#menu-page.active #content .heading #showCart {
+  display: none;
+}
+#menu-page.active #cart {
+  width: 300px;
+}
+#menu-page.active #cart #order-containor {
+  width: inherit;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  background-color: #fbc02d;
+}
 #menu-page #content {
   width: 100%;
   padding: 1rem;
 }
-#menu-page #content h1 {
+#menu-page #content .heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+#menu-page #content .heading h1 {
   font-size: 3rem;
+}
+#menu-page #content .heading #showCart {
+  display: inline-block;
+  height: auto;
+  max-width: 50px;
+  cursor: pointer;
 }
 #menu-page #content #menu-containor {
   display: grid;
@@ -993,39 +1043,58 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
 }
 #menu-page #cart {
   height: 100%;
-  width: 100%;
-  max-width: 300px;
-  background-color: #fbc02d;
+  width: 0px;
   position: relative;
+  background-color: #fbc02d;
+  transition: width 0.4s ease;
 }
 #menu-page #cart #order-containor {
   height: 100%;
   max-height: 100vh;
-  position: sticky;
-  top: 0;
-  right: 0;
+  width: inherit;
   padding: 0.5rem;
-}
-#menu-page #cart #order-containor h2 {
-  font-size: 2rem;
-  color: #d32f2f;
-  border-bottom: 1px solid #d32f2f;
-}
-#menu-page #cart #order-containor #order-list {
-  height: 60vh;
-  border: 1px solid #333333;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 60px;
+  grid-template-rows: 3rem auto 100px;
+  gap: 1rem;
+}
+#menu-page #cart #order-containor .heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+  border-bottom: 1px solid #d32f2f;
+}
+#menu-page #cart #order-containor .heading h2 {
+  font-size: 2rem;
+  color: #d32f2f;
+}
+#menu-page #cart #order-containor .heading .close {
+  padding: 0;
+  width: 30px;
+  height: 30px;
+}
+#menu-page #cart #order-containor .heading .close:active {
+  background-color: red;
+  color: white;
+}
+#menu-page #cart #order-containor #order-list {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 72px;
   gap: 0.2rem;
-  grid-auto-rows: 60px;
+  grid-auto-rows: 72px;
+  overflow: hidden;
+  overflow-y: auto;
 }
 #menu-page #cart #order-containor #order-list .card {
   width: 100%;
   height: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
   display: grid;
-  grid-template-columns: 60px 1fr;
+  grid-template-columns: 72px 1fr;
   grid-template-rows: 1fr;
   gap: 0.25rem;
   cursor: pointer;
@@ -1043,6 +1112,8 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
 }
 #menu-page #cart #order-containor #order-list .card .details {
   width: 100%;
+  height: 100%;
+  position: relative;
 }
 #menu-page #cart #order-containor #order-list .card .details .title {
   font-size: 1.2rem;
@@ -1055,6 +1126,9 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
   justify-content: space-between;
   align-items: center;
   /* padding: 0 4px; */
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 #menu-page #cart #order-containor #order-list .card .details .order-btns button {
   all: unset;
@@ -1089,13 +1163,46 @@ header #navigation-menu #navigation nav a:hover, header #navigation-menu #naviga
 #menu-page #cart #order-containor #order-list .card .details .order-btns .price::before {
   content: "$";
 }
-#menu-page #cart #summary {
+#menu-page #cart #order-containor #summary {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 0;
 }
+#menu-page #cart #order-containor #summary #total {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+#menu-page #cart #order-containor #summary #total span {
+  font-size: 1.2rem;
+}
+#menu-page #cart #order-containor #summary #total span.qty::after {
+  content: " Pec";
+}
+#menu-page #cart #order-containor #summary #total span.value::before {
+  content: "$";
+}
+#menu-page #cart #order-containor #summary #btns button {
+  font-size: 1.2rem;
+  width: 100%;
+  border-radius: 0.2rem;
+}
+#menu-page #cart #order-containor #summary #btns button:hover {
+  transform: none;
+}
+#menu-page #cart #order-containor #summary #btns button:active {
+  background-color: green;
+  color: white;
+}
 
+@media screen and (max-width: 480px) {
+  #menu-page.active #cart {
+    width: 100vw;
+  }
+}
 footer {
   height: auto;
   width: 100%;
